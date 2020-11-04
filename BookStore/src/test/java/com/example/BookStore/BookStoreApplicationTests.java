@@ -33,7 +33,7 @@ public class BookStoreApplicationTests {
 				MockMvcRequestBuilders.get("/book")
 		)
 				.andExpect(status().is2xxSuccessful())
-				.andExpect(MockMvcResultMatchers.content().string(containsString("Spring Boot 2 Recipes")))
+				.andExpect(MockMvcResultMatchers.content().string(containsString("New book")))
 				.andExpect(MockMvcResultMatchers.content().string(containsString("Cloud-Native Applications in Java")))
 				.andExpect(MockMvcResultMatchers.content().string(containsString("Spring Boot in Action")));
 	}

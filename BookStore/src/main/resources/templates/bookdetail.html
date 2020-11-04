@@ -3,65 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <title>Book Details</title>
-    <link th:href="@{/css/style.css}" href="../static/css/style.css" rel="stylesheet"/>
+    <!-- Required meta tags -->
+    <metacharset="utf-8">
+    <metaname="viewport"content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
 <body>
-<div id="wrapper" class="column">
-    <div id="inner">
+<div class="container">
+    <div id="wrapper" class="column">
+        <div id="inner">
 
 
-        <div id="header">
-            <img img th:src="@{/images/header.png}" width="519" height="63" alt="Webshop"/>
-            <div id="nav">
-                <a th:href="login">your account</a> | <a href="/shopcart">view cart</a> | <a
-                    href="/orders">orders</a>
+            <div id="header">
+                <img img th:src="@{/images/header.png}" width="519" height="63" alt="Webshop"/>
+                <div id="nav">
+                    <a th:href="login">your account</a> | <a href="/shopcart">view cart</a> | <a
+                        href="/orders">orders</a>
+                </div>
             </div>
-        </div>
 
-        <h1>Book</h1>
-        <div>
-            <p><a th:href="'/?page=' + ${page}">Back to books</a></p>
-        </div>
-        <table>
-            <tr>
-                <th>Titltrhxe</th>
-                <th th:text="${book.title}"></th>
-            </tr>
-            <tr>
-                <th>Author</th>
-                <th th:text="${book.author}"></th>
-            </tr>
-            <tr>
-                <th>Price</th>
-                <th th:text="${book.price}"></th>
-            </tr>
-            <tr>
-                <th>Date</th>
-                <th th:text="${book.date}"></th>
-            </tr>
-            <tr>
-                <th>For children:</th>
-                <th th:text="'For children: ' + ${book.forChildren}"></th>
-            </tr>
-        </table>
+            <h1>Book</h1>
+            <div>
+                <p><a th:href="'/?page=' + ${page}">Back to books</a></p>
+            </div>
+            <table>
+                <tr>
+                    <th>Titltrhxe</th>
+                    <th th:text="${book.title}"></th>
+                </tr>
+                <tr>
+                    <th>Author</th>
+                    <th th:text="${book.author}"></th>
+                </tr>
+                <tr>
+                    <th>Price</th>
+                    <th th:text="${book.price}"></th>
+                </tr>
+                <tr>
+                    <th>Date</th>
+                    <th th:text="${book.date}"></th>
+                </tr>
+                <tr>
+                    <th>For children:</th>
+                    <th th:text="'For children: ' + ${book.forChildren}"></th>
+                </tr>
+            </table>
 
-        <div>
+            <div>
         <span th:if="${showPrev}">
             <a th:href="'/?page=' + ${currentPage-1}" th:text="Previous"></a>
         </span>
 
-            <span th:each="page : ${pages}">
+                <span th:each="page : ${pages}">
             <span th:if="${currentPage == page}" th:text="${page}"></span>
             <a th:if="${currentPage != page}" th:href="'/?page=' + ${page}" th:text="${page}"></a>
         </span>
 
-            <span th:if="${showNext}">
+                <span th:if="${showNext}">
             <a th:href="'/?page=' + ${currentPage+1}" th:text="Next"></a>
         </span>
+            </div>
         </div>
     </div>
-</div>
 
+</div>
 </body>
 </html>

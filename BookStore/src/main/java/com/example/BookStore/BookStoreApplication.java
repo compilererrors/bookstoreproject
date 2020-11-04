@@ -16,9 +16,40 @@ Requirements:
 
 Short description of the project
 - Webshop for books with a shop cart, user account page etc.
-Must-have features
--
+
+*Must-have features*
+
+- Login for admin
+1. add/remove/edit books *USER AUTH*
+
+- Login for user
+1. Add to cart, show specific shop cart for user. *CART*
+2. Add to cart (if more than 2, show on same "row". *CART*
+3. Remove from cart *CART*
+
+- Create user account
+1. Save user and auth on user db *USER AUTH*
+
+-Logistics/shopping service
+1. Add items to shopcart
+2. Shopcart remake (add to session for specific user)
+
+- Styling
+1. Nice navbar/header
+2. Nice pagination
+3. Maybe rework the list
+
+- Controllers
+1. Remove from cart
+2. User /login change?
+3. Rework how the shop cart shows
+
 Nice-to-have features.
+1. Lagersaldo?
+2. Buy button
+3. Add to orders
+4. Counter at the shopcart link that adds +1 for each item
+5. User "service"
 
  */
 import org.springframework.boot.SpringApplication;

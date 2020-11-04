@@ -3,31 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link th:href="@{/css/style.css}" href="../static/css/style.css" rel="stylesheet"/>
+    <!-- Required meta tags -->
+    <metacharset="utf-8">
+    <metaname="viewport"content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
 
-<div id="wrapper" class="column">
-    <div id="inner">
+<div class="container">
+
+    <div id="wrapper" class="column">
+        <div id="inner">
 
 
-        <div id="header">
-            <img img th:src="@{/images/header.png}" width="519" height="63" alt="Webshop"/>
-            <div id="nav">
-                <a href="/login">your account</a> | <a href="/shopcart">view cart</a> | <a
-                    href="/orders">orders</a> | <a th:href="logout">logout</a>
+            <div id="header">
+                <img img th:src="@{/images/header.png}" width="519" height="63" alt="Webshop"/>
+                <div id="nav">
+                    <a href="/login">your account</a> | <a href="/shopcart">view cart</a> | <a
+                        href="/orders">orders</a> | <a th:href="logout">logout</a>
+                </div>
             </div>
+
+            <h3 th:text="'Hello ' + ${session.username}"></h3>
+
+            <ul th:each="item : ${session.cart}">
+                <li th:text="${item.title}"></li>
+            </ul>
+
+
+            <a href="/">Back to start page</a>
         </div>
-
-        <h3 th:text="'Hello ' + ${session.username}"></h3>
-
-        <ul th:each="item : ${session.cart}">
-            <li th:text="${item.title}"></li>
-        </ul>
-
-        <a href="/">Back to start page</a>
     </div>
-</div>
 
+</div>
 </body>
 </html>

@@ -4,6 +4,7 @@ package com.example.BookStore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -99,8 +100,9 @@ public class BookController {
         cart.add(book);
         return "/book";
     }*/
+
     @RequestMapping(value = "/book/{page}/{id}/addBook", method = RequestMethod.POST)
-    public String rateHandler(HttpSession session, HttpServletRequest request, @ModelAttribute("book") Book book, Model model) {
+    public String rateHandler(HttpSession session, HttpServletRequest request, @ModelAttribute("book") Book book, Model model, Shopcart shopcart) {
         List<Book> cart = (List<Book>) session.getAttribute("cart");
 
 
@@ -160,7 +162,7 @@ public class BookController {
     }
 
     @GetMapping("/shopcart")
-    public String shopcart(HttpSession session) {
+    public String shopcart(HttpSession session, Shopcart shopcart) {
 
         return "shopcart";
     }
