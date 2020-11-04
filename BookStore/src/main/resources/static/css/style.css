@@ -1,0 +1,88 @@
+body {
+  font-family: tahoma, helvetica, arial, sans-serif;
+}
+
+strong {
+  font-weight: 700;
+  background-color: yellow;
+}
+
+#wrapper {
+	margin: auto;
+	text-align: left;
+	width: 748px;
+	position: relative;
+}
+
+#inner {
+	border-left: 2px solid #fff;
+	border-right: 2px solid #fff;
+	background: white;
+	color: black;
+	margin-bottom: 10px;
+}
+
+#inner p {
+  font-family: sans-serif;
+}
+
+#inner th, tr {
+  font-family: comic-sans;
+  
+}
+
+#header {
+	background: url(/images/header_bg.gif) repeat-x;
+	padding-top: 9px;
+	position: relative;
+}
+
+#header img {
+	display: block;
+}
+
+#nav {
+	position: absolute;
+	left: 480px;
+	top: 25px;
+  width: 270px;
+  font-size: 12px;
+}
+
+#nav, #nav a {
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#nav a:hover {
+	text-decoration: underline;
+}
+
+
+.column{
+  width: 600px;
+  margin: 0px auto;
+  background-color:white;
+  padding: 1px 40px 40px 40px;
+  border-left: solid 25px #ff8a8a;
+  border-right: solid 25px #ff8a8a;    
+}
+
+.list {
+  text-align: left;
+}
+
+.list h1, h2 {
+  font-family: sans-serif;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+.paginator {
+  text-decoration: royalblue;
+  position: absolute;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}

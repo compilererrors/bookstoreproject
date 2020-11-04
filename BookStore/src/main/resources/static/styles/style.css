@@ -1,0 +1,36 @@
+body {
+    font-family: tahoma, helvetica, arial, sans-serif;
+    font-size: 10px;
+    text-align: center;
+    background-color: rosybrown;
+}
+
+html, body, #wrapper, h1 {
+margin: 0;
+padding: 0;
+}
+
+
+
+.column {
+    width: 60% auto;
+    background-color: rosybrown;
+}
+
+.paginatorclass {
+    font-size: 100px;
+    padding: 8px 8px 5px 8px;
+	position: relative;
+    text-align: center;
+    border-bottom: 2px solid red;
+}
+
+#paginatorid {
+    font-size: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 30px auto;
+}
+
