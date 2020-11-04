@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/css/style.css}" href="../static/css/style.css" rel="stylesheet"/>
+
+</head>
+<body>
+
+<div id="wrapper" class="column">
+    <div id="inner">
+
+
+        <div id="header">
+            <img img th:src="@{/images/header.png}" width="519" height="63" alt="Webshop"/>
+            <div id="nav">
+                <a th:href="login">your account</a> | <a href="/shopcart">view cart</a> | <a
+                    href="/orders">orders</a>
+            </div>
+        </div>
+
+
+        <form action="/login" method="POST">
+            Username: <input type="text" name="username"/>
+            Password: <input type="password" name="password"/>
+            <input type="submit"/>
+        </form>
+
+
+        <a href="/">Back to start page</a>
+    </div>
+</div>
+</body>
+</html>

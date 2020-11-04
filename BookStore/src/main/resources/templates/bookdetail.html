@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Details</title>
+    <link th:href="@{/css/style.css}" href="../static/css/style.css" rel="stylesheet"/>
+
+</head>
+<body>
+<div id="wrapper" class="column">
+    <div id="inner">
+
+
+        <div id="header">
+            <img img th:src="@{/images/header.png}" width="519" height="63" alt="Webshop"/>
+            <div id="nav">
+                <a th:href="login">your account</a> | <a href="/shopcart">view cart</a> | <a
+                    href="/orders">orders</a>
+            </div>
+        </div>
+
+        <h1>Book</h1>
+        <div>
+            <p><a th:href="'/?page=' + ${page}">Back to books</a></p>
+        </div>
+        <table>
+            <tr>
+                <th>Titltrhxe</th>
+                <th th:text="${book.title}"></th>
+            </tr>
+            <tr>
+                <th>Author</th>
+                <th th:text="${book.author}"></th>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <th th:text="${book.price}"></th>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <th th:text="${book.date}"></th>
+            </tr>
+            <tr>
+                <th>For children:</th>
+                <th th:text="'For children: ' + ${book.forChildren}"></th>
+            </tr>
+        </table>
+
+        <div>
+        <span th:if="${showPrev}">
+            <a th:href="'/?page=' + ${currentPage-1}" th:text="Previous"></a>
+        </span>
+
+            <span th:each="page : ${pages}">
+            <span th:if="${currentPage == page}" th:text="${page}"></span>
+            <a th:if="${currentPage != page}" th:href="'/?page=' + ${page}" th:text="${page}"></a>
+        </span>
+
+            <span th:if="${showNext}">
+            <a th:href="'/?page=' + ${currentPage+1}" th:text="Next"></a>
+        </span>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

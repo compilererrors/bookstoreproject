@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/css/style.css}" href="../static/css/style.css" rel="stylesheet"/>
+</head>
+<body>
+<div id="wrapper" class="column">
+    <div id="inner">
+
+
+        <div id="header">
+            <img img th:src="@{/images/header.png}" width="519" height="63" alt="Webshop"/>
+            <div id="nav">
+                <a th:href="login">your account</a> | <a href="/shopcart">view cart</a> | <a
+                    href="/orders">orders</a>
+            </div>
+        </div>
+
+
+        <div class="shopcart">
+            <ul th:each="item : ${session.cart}">
+                <table>
+                    <tr>
+                        <th>Cart item</th>
+                        <th th:text="${itemStat.index +1}"></th>
+                    </tr>
+                    <tr>
+                        <th>Title</th>
+                        <th th:text="${item.title}"></th>
+                    </tr>
+                    <tr>
+                        <th>Author</th>
+                        <th th:text="${item.author}"></th>
+                    </tr>
+                    <tr>
+                        <th>Price</th>
+                        <th th:text="${item.price}"></th>
+                    </tr>
+                    <tr>
+                        <th>Date</th>
+                        <th th:text="${item.date}"></th>
+                    </tr>
+                </table>
+            </ul>
+        </div>
+
+
+        <a href="/">Back to start page</a>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <metacharset="utf-8">
+    <metaname="viewport"content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+
+
+    <div id="wrapper" class="column">
+        <div id="inner">
+
+
+            <div id="header">
+                <img img th:src="@{/images/header.png}" src="../static/images/header.png" width="519" height="63"
+                     alt="Webshop"/>
+                <div id="nav">
+                    <a th:href="login">your account</a> | <a href="/shopcart">view cart</a> | <a
+                        href="/orders">orders</a>
+                </div>
+            </div>
+
+
+            <div class="container">
+                <div class="panel panel-default">
+                    <h1><div class="panel-heading">Books</div></h1>
+                    <ol class="list-group">
+                        <tr>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Price</th>
+                        </tr>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg">
+
+                                    <tr th:each="book : ${books}" class="nav-item active">
+                                        <li class="list-group-item">
+
+                                            <div class="col-6 col-sm-3">
+                                            <td><a th:href="'/book/' + ${currentPage} + '/' + ${book.id}"
+                                                   th:text="${book.title}" class="list-link"></a></td>
+                                            </div>
+
+                                            <div class="col-6 col-sm-3">
+                                            <td th:text="${book.author}"></td>
+                                            </div>
+
+                                            <div class="col-6 col-sm-3">
+                                            <td th:text="${book.price}"></td>
+                                            </div>
+
+                                    </tr>
+                    </ol>
+                    </li>
+                </div>
+            </div>
+
+
+            <div class="paginator">
+                <span th:if="${showPrev}">
+                    <a th:href="'/?page=' + ${currentPage-1}" th:text="Previous"></a>
+                </span>
+
+                <span th:each="page : ${pages}">
+                    <span th:if="${currentPage == page}" th:text="${page}"></span>
+                    <a th:if="${currentPage != page}" th:href="'/?page=' + ${page}" th:text="${page}"></a>
+                </span>
+
+                <span th:if="${showNext}">
+                    <a th:href="'/?page=' + ${currentPage+1}" th:text="Next"></a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+</body>
+</html>
