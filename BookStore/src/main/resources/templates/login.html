@@ -9,33 +9,64 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../css/style.css" th:href="@{/css/style.css}" />
 
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Book store project</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" th:href="login">your account <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/shopcart">view cart</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/orders">orders</a>
+            </li>
+
+            </li>
+        </ul>
+    </div>
+</nav>
 <div class="container">
-    <div id="wrapper" class="column">
-        <div id="inner">
+
+    <div class="card">
+        <div class="card-body" >
+            <h5 class="card-title">Login</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Please enter your credentials</h6>
+
+            <div class="col">
+                <form action="/login" method="POST" class="form-group">
+                    Username: <input class="form-control" type="text" name="username"/>
+                    Password: <input class="form-control" type="password" name="password"/>
+                    <input class="btn btn-outline-dark" type="submit" value="Login"/>
+                </form>
 
 
-            <div id="header">
-                <img img th:src="@{/images/header.png}" width="519" height="63" alt="Webshop"/>
-                <div id="nav">
-                    <a th:href="login">your account</a> | <a href="/shopcart">view cart</a> | <a
-                        href="/orders">orders</a>
-                </div>
-            </div>
+                <a href="/">Back to start page</a>
 
-
-            <form action="/login" method="POST">
-                Username: <input type="text" name="username"/>
-                Password: <input type="password" name="password"/>
-                <input type="submit"/>
-            </form>
-
-
-            <a href="/">Back to start page</a>
         </div>
     </div>
+
+    <div class="col"> </div>
+
+
+        </div>
+
+    </div>
+<div class="col"> </div>
+
+
+
+
 </div>
 </body>
 </html>

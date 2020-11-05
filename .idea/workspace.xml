@@ -3,8 +3,31 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="0211cef2-723f-4c65-959b-3e76c9c783ef" name="Default Changelist" comment="" />
+    <list default="true" id="0211cef2-723f-4c65-959b-3e76c9c783ef" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_20_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +40,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -33,7 +59,11 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../JavaWeb8/JavaWeb8/pom.xml" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
@@ -78,6 +108,18 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="765" y="-889" key="#com.intellij.ide.util.MemberChooser" timestamp="1604504111493">
       <screen x="0" y="-1080" width="1920" height="1040" />
@@ -104,39 +146,44 @@
       <screen x="0" y="0" width="1920" height="999" />
     </state>
     <state x="92" y="92" width="1736" height="815" key="DiffContextDialog/0.0.1920.999/0.-1200.1920.1160@0.0.1920.999" timestamp="1603968235343" />
-    <state x="740" y="-843" key="FileChooserDialogImpl" timestamp="1604496430279">
-      <screen x="0" y="-1080" width="1920" height="1040" />
+    <state x="789" y="253" key="FileChooserDialogImpl" timestamp="1604563068385">
+      <screen x="0" y="0" width="2048" height="1112" />
     </state>
+    <state x="789" y="253" key="FileChooserDialogImpl/-1920.0.1920.1030/0.0.2048.1112@0.0.2048.1112" timestamp="1604563068385" />
     <state x="740" y="-843" key="FileChooserDialogImpl/0.0.1920.999/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1604496430279" />
     <state x="740" y="228" key="FileChooserDialogImpl/0.0.1920.999/0.-1200.1920.1160@0.0.1920.999" timestamp="1603970374109" />
     <state x="740" y="228" key="FileChooserDialogImpl/0.0.1920.999@0.0.1920.999" timestamp="1603753787126" />
-    <state width="1877" height="150" key="GridCell.Tab.0.bottom" timestamp="1604502746298">
-      <screen x="0" y="-1080" width="1920" height="1040" />
+    <state width="2005" height="305" key="GridCell.Tab.0.bottom" timestamp="1604562953056">
+      <screen x="0" y="0" width="2048" height="1112" />
     </state>
+    <state width="2005" height="305" key="GridCell.Tab.0.bottom/-1920.0.1920.1030/0.0.2048.1112@0.0.2048.1112" timestamp="1604562953056" />
     <state width="1877" height="150" key="GridCell.Tab.0.bottom/0.0.1920.999/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1604502746298" />
     <state width="1877" height="90" key="GridCell.Tab.0.bottom/0.0.1920.999/0.-1080.1920.1040@0.0.1920.999" timestamp="1604495784939" />
     <state width="1877" height="188" key="GridCell.Tab.0.bottom/0.0.1920.999/0.-1200.1920.1160@0.-1200.1920.1160" timestamp="1604053714920" />
     <state width="1877" height="188" key="GridCell.Tab.0.bottom/0.0.1920.999/0.-1200.1920.1160@0.0.1920.999" timestamp="1604060426440" />
     <state width="1877" height="90" key="GridCell.Tab.0.bottom/0.0.1920.999@0.0.1920.999" timestamp="1604425767207" />
-    <state width="1877" height="150" key="GridCell.Tab.0.center" timestamp="1604502746297">
-      <screen x="0" y="-1080" width="1920" height="1040" />
+    <state width="2005" height="305" key="GridCell.Tab.0.center" timestamp="1604562953056">
+      <screen x="0" y="0" width="2048" height="1112" />
     </state>
+    <state width="2005" height="305" key="GridCell.Tab.0.center/-1920.0.1920.1030/0.0.2048.1112@0.0.2048.1112" timestamp="1604562953056" />
     <state width="1877" height="150" key="GridCell.Tab.0.center/0.0.1920.999/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1604502746297" />
     <state width="1877" height="90" key="GridCell.Tab.0.center/0.0.1920.999/0.-1080.1920.1040@0.0.1920.999" timestamp="1604495784939" />
     <state width="1877" height="188" key="GridCell.Tab.0.center/0.0.1920.999/0.-1200.1920.1160@0.-1200.1920.1160" timestamp="1604053714920" />
     <state width="1877" height="188" key="GridCell.Tab.0.center/0.0.1920.999/0.-1200.1920.1160@0.0.1920.999" timestamp="1604060426440" />
     <state width="1877" height="90" key="GridCell.Tab.0.center/0.0.1920.999@0.0.1920.999" timestamp="1604425767207" />
-    <state width="1877" height="150" key="GridCell.Tab.0.left" timestamp="1604502746296">
-      <screen x="0" y="-1080" width="1920" height="1040" />
+    <state width="2005" height="305" key="GridCell.Tab.0.left" timestamp="1604562953056">
+      <screen x="0" y="0" width="2048" height="1112" />
     </state>
+    <state width="2005" height="305" key="GridCell.Tab.0.left/-1920.0.1920.1030/0.0.2048.1112@0.0.2048.1112" timestamp="1604562953056" />
     <state width="1877" height="150" key="GridCell.Tab.0.left/0.0.1920.999/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1604502746296" />
     <state width="1877" height="90" key="GridCell.Tab.0.left/0.0.1920.999/0.-1080.1920.1040@0.0.1920.999" timestamp="1604495784938" />
     <state width="1877" height="188" key="GridCell.Tab.0.left/0.0.1920.999/0.-1200.1920.1160@0.-1200.1920.1160" timestamp="1604053714920" />
     <state width="1877" height="188" key="GridCell.Tab.0.left/0.0.1920.999/0.-1200.1920.1160@0.0.1920.999" timestamp="1604060426440" />
     <state width="1877" height="90" key="GridCell.Tab.0.left/0.0.1920.999@0.0.1920.999" timestamp="1604425767207" />
-    <state width="1877" height="150" key="GridCell.Tab.0.right" timestamp="1604502746297">
-      <screen x="0" y="-1080" width="1920" height="1040" />
+    <state width="2005" height="305" key="GridCell.Tab.0.right" timestamp="1604562953056">
+      <screen x="0" y="0" width="2048" height="1112" />
     </state>
+    <state width="2005" height="305" key="GridCell.Tab.0.right/-1920.0.1920.1030/0.0.2048.1112@0.0.2048.1112" timestamp="1604562953056" />
     <state width="1877" height="150" key="GridCell.Tab.0.right/0.0.1920.999/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1604502746297" />
     <state width="1877" height="90" key="GridCell.Tab.0.right/0.0.1920.999/0.-1080.1920.1040@0.0.1920.999" timestamp="1604495784939" />
     <state width="1877" height="188" key="GridCell.Tab.0.right/0.0.1920.999/0.-1200.1920.1160@0.-1200.1920.1160" timestamp="1604053714920" />
@@ -166,6 +213,10 @@
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.999/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1603534396178" />
     <state width="1877" height="326" key="GridCell.Tab.1.right/0.0.1920.999/0.-1200.1920.1160@0.0.1920.999" timestamp="1604055684195" />
     <state width="1877" height="326" key="GridCell.Tab.1.right/0.0.1920.999@0.0.1920.999" timestamp="1604425385154" />
+    <state x="505" y="130" key="SettingsEditor" timestamp="1604563070592">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="505" y="130" key="SettingsEditor/-1920.0.1920.1030/0.0.2048.1112@0.0.2048.1112" timestamp="1604563070592" />
     <state x="570" y="125" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1603640133388">
       <screen x="0" y="0" width="1920" height="999" />
     </state>
@@ -184,17 +235,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/BookStore/src/main/java/com/example/BookStore/BookController.java</url>
-          <line>37</line>
+          <line>39</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/BookStore/src/main/java/com/example/BookStore/BookController.java</url>
-          <line>167</line>
+          <line>170</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/BookStore/src/main/java/com/example/BookStore/BookController.java</url>
-          <line>133</line>
+          <line>136</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
