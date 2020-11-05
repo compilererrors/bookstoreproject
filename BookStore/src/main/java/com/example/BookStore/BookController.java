@@ -139,14 +139,14 @@ public class BookController {
 
 
 
-    @GetMapping("/startpage")
+    /*@GetMapping("/startpage")
     public String startpage(HttpSession session) {
         String username = (String) session.getAttribute("username");
         if (username != null && username.equals("admin")) {
             return "books";
         }
         return "books";
-    }
+    }*/
 
     @GetMapping("/login")
     public String level1() {
@@ -154,11 +154,11 @@ public class BookController {
     }
 
 
-    @GetMapping("/logout")
+    /*@GetMapping("/logout")
     String logout(HttpSession session) {
         session.invalidate();
         return "login1";
-    }
+    }*/
 
     @GetMapping("/shopcart")
     public String shopcart(HttpSession session) {
