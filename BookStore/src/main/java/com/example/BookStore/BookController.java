@@ -38,9 +38,16 @@ public class BookController {
 
         return "adminbooks";
     }
-    @GetMapping("/adminbooks/{page}/{id}")
+    @GetMapping("/adminbook/{page}/{id}")
     public String adminbook(Model model, @PathVariable Integer page, @PathVariable Integer id) {
         getBookPageAndId(model, page, id);
+
+        return "adminbook";
+    }
+
+    @GetMapping("/adminbook/{page}/{id}/addBook")
+    public String adminbookAdd(Model model, @PathVariable Integer page) {
+        model.addAttribute("page", page);
 
         return "book";
     }
