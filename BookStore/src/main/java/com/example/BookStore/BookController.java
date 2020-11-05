@@ -109,6 +109,9 @@ public class BookController {
 
         session.setAttribute("cartHandler", cartHandler.getCartItems());
 
+        session.setAttribute("totalprice", cartHandler.getTotalPriceInCart());
+        session.setAttribute("totalItems", cartHandler.getTotalNumberOfItemsInCart());
+
 
 
         System.out.println(book.getTitle());
@@ -120,6 +123,19 @@ public class BookController {
         public String addOneExistingBook(HttpSession session, HttpServletRequest request, int cartItemIndex){
 
         cartHandler.addItemQTY(cartItemIndex);
+        session.setAttribute("totalprice", cartHandler.getTotalPriceInCart());
+        session.setAttribute("totalItems", cartHandler.getTotalNumberOfItemsInCart());
+
+
+        return "shopcart";
+    }
+
+    @PostMapping("/subExistingBook")
+    public String subOneExistingBook(HttpSession session, HttpServletRequest request, int cartItemIndex){
+
+        cartHandler.subItemQTY(cartItemIndex);
+        session.setAttribute("totalprice", cartHandler.getTotalPriceInCart());
+        session.setAttribute("totalItems", cartHandler.getTotalNumberOfItemsInCart());
 
 
         return "shopcart";

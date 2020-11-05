@@ -51,27 +51,28 @@
                         </tr>
                         <tr>
 
-
-                                <form ACTION="#" th:action="@{/book/{page}/{id}/addBook}"  method="POST">
-                                <button type="number" name="cartItemID" th:value="${item.Index}">+</button>
+                            <th>
+                                <form ACTION="#" th:action="@{/addExistingBook}"  method="POST">
+                                <button type="number" name="cartItemIndex" th:value="${itemStat.index}">+</button>
                             </form>
+                            </th>
 
-                            <!--<form ACTION="#" th:action="@{/addExistingBook}" th:object="${item}" method="POST">
-                                    <input type="hidden" th:field="*{book.id}"/>
-                                    <input type="hidden" th:field="*{book.title}"/>
-                                    <input type="hidden" th:field="*{book.author}"/>
-                                    <input type="hidden" th:field="*{book.price}"/>
-                                    <input type="hidden" th:field="*{book.date}"/>
-                                    <button type="submit">Add to cart</button>
-                                </form>-->
+                            <th>
+                                <form ACTION="#" th:action="@{/subExistingBook}"  method="POST">
+                                    <button type="number" name="cartItemIndex" th:value="${itemStat.index}">-</button>
+                                </form>
 
 
+                            </th>
 
                         </tr>
 
 
                     </table>
                 </ul>
+
+                <h2 th:if="${session.cartHandler!=null}" th:text="'Total Price:'+ ${session.totalprice}"></h2>
+                <h2 th:if="${session.cartHandler!=null}" th:text="'Total QTY:'+ ${session.totalItems}"></h2>
             </div>
 
 

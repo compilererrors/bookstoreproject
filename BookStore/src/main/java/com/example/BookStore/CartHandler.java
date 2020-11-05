@@ -25,7 +25,7 @@ public class CartHandler {
     }
 
     public int getTotalNumberOfItemsInCart(){
-
+        totalNumberOfItems=0;
         for(CartItem item:cartItems){
             totalNumberOfItems+=item.getQty();
         }
@@ -34,9 +34,9 @@ public class CartHandler {
     }
 
     public Double getTotalPriceInCart(){
-
+        totalPrice=0;
         for(int i=0;i<cartItems.size();i++){
-            totalPrice+=cartItems.get(i).getBook().getPrice();
+            totalPrice+=cartItems.get(i).getBook().getPrice()*cartItems.get(i).getQty();
         }
         return totalPrice;
     }
@@ -91,4 +91,12 @@ public class CartHandler {
         cartItems.get(cartItemIndex).addQty();
 
     }
+
+    public void subItemQTY(int cartItemIndex){
+        cartItems.get(cartItemIndex).subQty();
+        if(cartItems.get(cartItemIndex).getQty()==0)
+            cartItems.remove(cartItemIndex);
+
+    }
+
 }
