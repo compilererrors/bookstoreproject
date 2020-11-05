@@ -81,16 +81,16 @@
 
             <div class="paginator">
                 <span th:if="${showPrev}">
-                    <a th:href="'/?page=' + ${currentPage-1}" th:text="Previous"></a>
+                    <a th:href="'/adminview?page=' + ${currentPage-1}" th:text="Previous"></a>
                 </span>
 
                 <span th:each="page : ${pages}">
                     <span th:if="${currentPage == page}" th:text="${page}"></span>
-                    <a th:if="${currentPage != page}" th:href="'/?page=' + ${page}" th:text="${page}"></a>
+                    <a th:if="${currentPage != page}" th:href="'/adminview?page=' + ${page}" th:text="${page}"></a>
                 </span>
 
                 <span th:if="${showNext}">
-                    <a th:href="'/?page=' + ${currentPage+1}" th:text="Next"></a>
+                    <a th:href="'/adminview?page=' + ${currentPage+1}" th:text="Next"></a>
                 </span>
             </div>
         </div>
