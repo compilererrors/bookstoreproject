@@ -17,6 +17,7 @@ import java.util.List;
 public class BookController {
 
     private static final int PAGE_SIZE = 10;
+    
 
     @Autowired
     private BookRepository repository;

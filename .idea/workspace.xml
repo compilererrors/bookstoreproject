@@ -37,6 +37,9 @@
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.BookStore" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\vinyb\OneDrive - H &amp; M HENNES &amp; MAURITZ GBC AB\IdeaProjects\Spring\BookStore\BookStore\src\main\resources\static" />
       <recent name="C:\Users\vinyb\OneDrive - H &amp; M HENNES &amp; MAURITZ GBC AB\IdeaProjects\Spring\BookStore\BookStore\src\main\resources\images" />
@@ -76,9 +79,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="183" key="#com.intellij.ide.util.MemberChooser" timestamp="1603530557211">
-      <screen x="0" y="0" width="1920" height="999" />
+    <state x="765" y="-889" key="#com.intellij.ide.util.MemberChooser" timestamp="1604504111493">
+      <screen x="0" y="-1080" width="1920" height="1040" />
     </state>
+    <state x="765" y="-889" key="#com.intellij.ide.util.MemberChooser/0.0.1920.999/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1604504111493" />
     <state x="765" y="183" key="#com.intellij.ide.util.MemberChooser/0.0.1920.999/0.-1080.1920.1040@0.0.1920.999" timestamp="1603530557211" />
     <state x="690" y="246" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603531475447">
       <screen x="0" y="0" width="1920" height="999" />
@@ -180,17 +184,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/BookStore/src/main/java/com/example/BookStore/BookController.java</url>
-          <line>36</line>
+          <line>37</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/BookStore/src/main/java/com/example/BookStore/BookController.java</url>
-          <line>166</line>
+          <line>167</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/BookStore/src/main/java/com/example/BookStore/BookController.java</url>
-          <line>132</line>
+          <line>133</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
