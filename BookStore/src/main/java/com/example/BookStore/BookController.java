@@ -120,7 +120,7 @@ public class BookController {
         public String addOneExistingBook(HttpSession session, HttpServletRequest request, int cartItemIndex){
 
         cartHandler.addItemQTY(cartItemIndex);
-        session.setAttribute("totalprice", cartHandler.getTotalPriceInCart());
+        session.setAttribute("totalprice", Math.ceil(cartHandler.getTotalPriceInCart()*100)/100);
         session.setAttribute("totalItems", cartHandler.getTotalNumberOfItemsInCart());
 
 
@@ -131,7 +131,7 @@ public class BookController {
     public String subOneExistingBook(HttpSession session, HttpServletRequest request, int cartItemIndex){
 
         cartHandler.subItemQTY(cartItemIndex);
-        session.setAttribute("totalprice", cartHandler.getTotalPriceInCart());
+        session.setAttribute("totalprice", Math.ceil(cartHandler.getTotalPriceInCart()*100)/100);
         session.setAttribute("totalItems", cartHandler.getTotalNumberOfItemsInCart());
 
 
@@ -187,7 +187,7 @@ public class BookController {
     @GetMapping("/shopcart")
     public String shopcart(HttpSession session) {
         session.setAttribute("cartHandler", cartHandler.getCartItems());
-        session.setAttribute("totalprice", cartHandler.getTotalPriceInCart());
+        session.setAttribute("totalprice", Math.ceil(cartHandler.getTotalPriceInCart()*100)/100);
         session.setAttribute("totalItems", cartHandler.getTotalNumberOfItemsInCart());
         return "shopcart";
     }
