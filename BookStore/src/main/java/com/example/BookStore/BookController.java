@@ -187,6 +187,8 @@ public class BookController {
     @GetMapping("/shopcart")
     public String shopcart(HttpSession session) {
         session.setAttribute("cartHandler", cartHandler.getCartItems());
+        session.setAttribute("totalprice", cartHandler.getTotalPriceInCart());
+        session.setAttribute("totalItems", cartHandler.getTotalNumberOfItemsInCart());
         return "shopcart";
     }
 

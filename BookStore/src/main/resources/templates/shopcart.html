@@ -71,8 +71,8 @@
                     </table>
                 </ul>
 
-                <h2 th:if="${session.cartHandler!=null}" th:text="'Total Price:'+ ${session.totalprice}"></h2>
-                <h2 th:if="${session.cartHandler!=null}" th:text="'Total QTY:'+ ${session.totalItems}"></h2>
+                <h2 th:if="${session.totalprice!=null}" th:text="'Total Price:'+ ${session.totalprice}"></h2>
+                <h2 th:if="${session.totalItems!=null}" th:text="'Total QTY:'+ ${session.totalItems}"></h2>
             </div>
 
 
