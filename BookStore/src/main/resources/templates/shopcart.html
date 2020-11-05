@@ -26,28 +26,50 @@
 
 
             <div class="shopcart">
-                <ul th:each="item : ${session.cart}">
+                <ul th:each="item : ${session.cartHandler}">
                     <table>
-                        <tr>
-                            <th>Cart item</th>
-                            <th th:text="${itemStat.index +1}"></th>
-                        </tr>
+
                         <tr>
                             <th>Title</th>
-                            <th th:text="${item.title}"></th>
+                            <th th:text="${item.book.title}"></th>
                         </tr>
                         <tr>
                             <th>Author</th>
-                            <th th:text="${item.author}"></th>
+                            <th th:text="${item.book.author}"></th>
                         </tr>
                         <tr>
                             <th>Price</th>
-                            <th th:text="${item.price}"></th>
+                            <th th:text="${item.book.price}"></th>
                         </tr>
                         <tr>
                             <th>Date</th>
-                            <th th:text="${item.date}"></th>
+                            <th th:text="${item.book.date}"></th>
                         </tr>
+                        <tr>
+                            <th>Qty</th>
+                            <th th:text="${item.qty}"></th>
+                        </tr>
+                        <tr>
+
+
+                                <form ACTION="#" th:action="@{/book/{page}/{id}/addBook}"  method="POST">
+                                <button type="number" name="cartItemID" th:value="${item.Index}">+</button>
+                            </form>
+
+                            <!--<form ACTION="#" th:action="@{/addExistingBook}" th:object="${item}" method="POST">
+                                    <input type="hidden" th:field="*{book.id}"/>
+                                    <input type="hidden" th:field="*{book.title}"/>
+                                    <input type="hidden" th:field="*{book.author}"/>
+                                    <input type="hidden" th:field="*{book.price}"/>
+                                    <input type="hidden" th:field="*{book.date}"/>
+                                    <button type="submit">Add to cart</button>
+                                </form>-->
+
+
+
+                        </tr>
+
+
                     </table>
                 </ul>
             </div>
