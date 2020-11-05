@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -37,14 +38,20 @@ public class BookController {
 
         return "adminbooks";
     }
-    @GetMapping("/book/{page}/{id}")
-    public String book(Model model, @PathVariable Integer page, @PathVariable Integer id) {
-        Book book = repository.getBook(id);
-        model.addAttribute("page", page);
-        model.addAttribute("book", book);
+    @GetMapping("/adminbooks/{page}/{id}")
+    public String adminbook(Model model, @PathVariable Integer page, @PathVariable Integer id) {
+        getBookPageAndId(model, page, id);
 
         return "book";
     }
+
+    @GetMapping("/book/{page}/{id}")
+    public String book(Model model, @PathVariable Integer page, @PathVariable Integer id) {
+        getBookPageAndId(model, page, id);
+
+        return "book";
+    }
+
 
     @GetMapping("/book/{page}/{id}/addBook")
     public String registerUser(Model model, @PathVariable Integer page) {
@@ -107,8 +114,6 @@ public class BookController {
 
         session.setAttribute("cartHandler", cartHandler.getCartItems());
 
-
-
         System.out.println(book.getTitle());
         String referer = request.getHeader("Referer");
         return "redirect:" + referer;
@@ -121,7 +126,6 @@ public class BookController {
         session.setAttribute("totalprice", Math.ceil(cartHandler.getTotalPriceInCart()*100)/100);
         session.setAttribute("totalItems", cartHandler.getTotalNumberOfItemsInCart());
 
-
         return "shopcart";
     }
 
@@ -132,10 +136,30 @@ public class BookController {
         session.setAttribute("totalprice", Math.ceil(cartHandler.getTotalPriceInCart()*100)/100);
         session.setAttribute("totalItems", cartHandler.getTotalNumberOfItemsInCart());
 
-
         return "shopcart";
     }
 
+    @GetMapping("/add")
+    public String add(Model model) {
+        model.addAttribute("book", new Book());
+        return "adminadd";
+    }
+
+    @PostMapping("/save")
+    public String set(@ModelAttribute Book book) {
+            repository.addBook(book);
+
+        int lastpage = repository.numberOfPages(PAGE_SIZE);
+
+        return "redirect:/adminview";
+    }
+
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable int id) {
+        repository.deleteBook(id);
+        return "redirect:/adminview";
+    }
 
 
 
@@ -197,6 +221,11 @@ public class BookController {
         model.addAttribute("showPrev", page > 1);
         model.addAttribute("showNext", page < pageCount);
 
+    }
+    private void getBookPageAndId(Model model, int page, int id) {
+        Book book = repository.getBook(id);
+        model.addAttribute("page", page);
+        model.addAttribute("book", book);
     }
 
 

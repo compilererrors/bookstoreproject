@@ -16,6 +16,18 @@ public class Book {
         this.date = date;
     }
 
+    public Book() {
+
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public boolean isNew(){
+        return this.id == null;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -51,5 +63,7 @@ public class Book {
     public void setDate(String date) {
         this.date = date;
     }
+
+
 
 }

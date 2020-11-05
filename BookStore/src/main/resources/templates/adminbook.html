@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <metacharset="utf-8">
+    <metaname="viewport"content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div id="wrapper" class="column">
+        <div id="inner">
+
+
+            <div id="header">
+                <img img th:src="@{/images/header.png}" width="519" height="63" alt="Webshop"/>
+                <div id="nav">
+                    <a href="/login">your account</a> | <a href="/shopcart">view cart</a> | <a
+                        href="/orders">orders</a>
+                </div>
+            </div>
+
+            <h1>Book</h1>
+            <div>
+
+                <a th:href="@{'/?adminbooks=' + ${page}}"><span th:text="'Back to page ' + ${page}"></span></a>
+
+
+            </div>
+            <table>
+                <tr>
+                    <th>Title</th>
+                    <th th:text="${book.title}"></th>
+                </tr>
+                <tr>
+                    <th>Author</th>
+                    <th th:text="${book.author}"></th>
+                </tr>
+                <tr>
+                    <th>Price</th>
+                    <th th:text="${book.price}"></th>
+                </tr>
+                <tr>
+                    <th>Date</th>
+                    <th th:text="${book.date}"></th>
+                </tr>
+
+            </table>
+
+
+            <form ACTION="#" th:action="@{/adminbooks/{page}/{id}/addBook}" th:object="${book}" method="POST">
+                <input type="hidden" th:field="*{id}"/>
+                <input type="hidden" th:field="*{title}"/>
+                <input type="hidden" th:field="*{author}"/>
+                <input type="hidden" th:field="*{price}"/>
+                <input type="hidden" th:field="*{date}"/>
+                <button type="submit">Add to cart</button>
+            </form>
+
+            <ul th:each="item : ${session.cartHandler}">
+                <li th:text="'id' + ${item.book.id} + ' ' + ${item.book.title} + ' added to cart. Qty=' + ${item.qty}"></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

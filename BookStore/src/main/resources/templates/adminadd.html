@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <metacharset="utf-8">
+    <metaname="viewport"content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+
+
+    <div id="wrapper" class="column">
+        <div id="inner">
+
+            <h1>This is the admin page</h1>
+
+
+            <div id="header">
+                <img img th:src="@{/images/header.png}" src="../static/images/header.png" width="519" height="63"
+                     alt="Webshop"/>
+                <div id="nav">
+                    <a th:href="login">your account</a> | <a href="/shopcart">view cart</a> | <a
+                        href="/orders">orders</a> | <a href="/add">New Book</a>
+                </div>
+            </div>
+
+
+            <div class="container">
+
+                <form action="#" th:action="@{/save}" th:object="${book}" method="POST">
+                    Title: <input type="text" th:field="*{title}"/>
+                    Author: <input type="text" th:field="*{author}"/>
+                    Price: <input type="text" th:field="*{price}"/>
+                    <input th:if="${book.id != null}" type="hidden" th:field="*{id}"/>
+                    <input type="submit" value="Save book">
+                </form>
+
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+</body>
+</html>

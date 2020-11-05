@@ -17,6 +17,20 @@ public class BookRepository {
         }
     }
 
+    public void deleteBook(int id) {
+        Book bookToDelete = this.getBook(id);
+        if (bookToDelete != null) {
+            books.remove(bookToDelete);
+        }
+    }
+
+    public Book addBook(Book book) {
+        Book lastBook = books.get(books.size()-1);
+        book.setId(lastBook.getId()+1); // set an id on the new book, should be unique, will be done by the database in future exercises
+        books.add(book);
+        return book;
+    }
+
     public List<Book> getPage(int page, int pageSize) {
         int from = Math.max(0,page*pageSize);
         int to = Math.min(books.size(),(page+1)*pageSize);

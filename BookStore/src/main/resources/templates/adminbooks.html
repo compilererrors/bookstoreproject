@@ -27,7 +27,7 @@
                      alt="Webshop"/>
                 <div id="nav">
                     <a th:href="login">your account</a> | <a href="/shopcart">view cart</a> | <a
-                        href="/orders">orders</a>
+                        href="/orders">orders</a> | <a href="/add">New Book</a>
                 </div>
             </div>
 
@@ -51,7 +51,7 @@
                                         <li class="list-group-item">
 
                                             <div class="col-6">
-                                                <td><a th:href="'/book/' + ${currentPage} + '/' + ${book.id}"
+                                                <td><a th:href="'/adminbooks/' + ${currentPage} + '/' + ${book.id}"
                                                        th:text="${book.title}" class="list-link"></a></td>
 
                                             </div>
@@ -63,9 +63,11 @@
                                             <div class="col-6 col-sm-3">
                                                 <td th:text="${book.price}"></td>
                                             </div>
+                                            <div class="col-sm">
+                                                <a th:href="'/delete/' + ${book.id}">Delete</a>
+                                            </div>
 
                                         </li>
-                                            <div class="col-sm"><a th:href="delete">Delete</a></div>
 
                                     </tr>
                                 </div>
