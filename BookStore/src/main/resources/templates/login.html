@@ -44,11 +44,21 @@
             <h6 class="card-subtitle mb-2 text-muted">Please enter your credentials</h6>
 
             <div class="col">
-                <form action="/login" method="POST" class="form-group">
-                    Username: <input class="form-control" type="text" name="username"/>
-                    Password: <input class="form-control" type="password" name="password"/>
-                    <input class="btn btn-outline-dark" type="submit" value="Login"/>
+                <div th:if="${param.error}">
+                    Invalid username and password.
+                </div>
+                <div th:if="${param.logout}">
+                    You have been logged out.
+                </div>
+                <form th:action="@{/login}" method="post" class="form-group">
+                    <div><label>Username: <input class="form-control" type="text" name="username"/></label></div>
+                    <div><label>Password: <input class="form-control" type="password" name="password"/></label></div>
+                    <input class="btn btn-outline-dark" type="submit" value="Sign In"/>
+
+                    <div><input type="submit" value="Sign In"/></div>
                 </form>
+
+
 
 
                 <a href="/">Back to start page</a>
