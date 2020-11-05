@@ -109,9 +109,6 @@ public class BookController {
 
         session.setAttribute("cartHandler", cartHandler.getCartItems());
 
-        session.setAttribute("totalprice", cartHandler.getTotalPriceInCart());
-        session.setAttribute("totalItems", cartHandler.getTotalNumberOfItemsInCart());
-
 
 
         System.out.println(book.getTitle());
