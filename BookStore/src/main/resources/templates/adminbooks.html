@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -18,18 +19,16 @@
     <div id="wrapper" class="column">
         <div id="inner">
 
+            <h1>This is the admin page</h1>
+
 
             <div id="header">
                 <img img th:src="@{/images/header.png}" src="../static/images/header.png" width="519" height="63"
                      alt="Webshop"/>
                 <div id="nav">
                     <a th:href="login">your account</a> | <a href="/shopcart">view cart</a> | <a
-                        href="/orders">orders</a> | <a href="/adminview">admin view</a>
+                        href="/orders">orders</a>
                 </div>
-                <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-                <form th:action="@{/logout}" method="post">
-                    <input type="submit" value="Sign Out"/>
-                </form>
             </div>
 
 
@@ -51,9 +50,10 @@
                                     <tr th:each="book : ${books}" class="nav-item active">
                                         <li class="list-group-item">
 
-                                            <div class="col-6 col-sm-3">
+                                            <div class="col-6">
                                                 <td><a th:href="'/book/' + ${currentPage} + '/' + ${book.id}"
                                                        th:text="${book.title}" class="list-link"></a></td>
+
                                             </div>
 
                                             <div class="col-6 col-sm-3">
@@ -64,9 +64,15 @@
                                                 <td th:text="${book.price}"></td>
                                             </div>
 
+                                        </li>
+                                            <div class="col-sm"><a th:href="delete">Delete</a></div>
+
                                     </tr>
+                                </div>
+                            </div>
+                        </div>
+
                     </ol>
-                    </li>
                 </div>
             </div>
 
