@@ -26,30 +26,53 @@
 
 
             <div class="shopcart">
-                <ul th:each="item : ${session.cart}">
+                <ul th:each="item : ${session.cartHandler}">
                     <table>
-                        <tr>
-                            <th>Cart item</th>
-                            <th th:text="${itemStat.index +1}"></th>
-                        </tr>
+
                         <tr>
                             <th>Title</th>
-                            <th th:text="${item.title}"></th>
+                            <th th:text="${item.book.title}"></th>
                         </tr>
                         <tr>
                             <th>Author</th>
-                            <th th:text="${item.author}"></th>
+                            <th th:text="${item.book.author}"></th>
                         </tr>
                         <tr>
                             <th>Price</th>
-                            <th th:text="${item.price}"></th>
+                            <th th:text="${item.book.price}"></th>
                         </tr>
                         <tr>
                             <th>Date</th>
-                            <th th:text="${item.date}"></th>
+                            <th th:text="${item.book.date}"></th>
                         </tr>
+                        <tr>
+                            <th>Qty</th>
+                            <th th:text="${item.qty}"></th>
+                        </tr>
+                        <tr>
+
+                            <th>
+                                <form ACTION="#" th:action="@{/addExistingBook}"  method="POST">
+                                <button type="number" name="cartItemIndex" th:value="${itemStat.index}">+</button>
+                            </form>
+                            </th>
+
+                            <th>
+                                <form ACTION="#" th:action="@{/subExistingBook}"  method="POST">
+                                    <button type="number" name="cartItemIndex" th:value="${itemStat.index}">-</button>
+                                </form>
+
+
+                            </th>
+
+                        </tr>
+
+
                     </table>
                 </ul>
+
+                <h2 th:if="${session.totalprice!=null}" th:text="'Total Price:'+ ${session.totalprice}"></h2>
+                <h2 th:if="${session.totalItems!=null}" th:text="'Total QTY:'+ ${session.totalItems}"></h2>
             </div>
 
 

@@ -21,6 +21,8 @@ public class BookController {
 
     @Autowired
     private BookRepository repository;
+    @Autowired
+    private CartHandler cartHandler;
 
     @GetMapping("/")
     public String books(Model model, @RequestParam(value = "page", required = false, defaultValue = "1") int page) {
@@ -100,21 +102,42 @@ public class BookController {
     }*/
 
     @RequestMapping(value = "/book/{page}/{id}/addBook", method = RequestMethod.POST)
-    public String rateHandler(HttpSession session, HttpServletRequest request, @ModelAttribute("book") Book book, Model model, Shopcart shopcart) {
-        List<Book> cart = (List<Book>) session.getAttribute("cart");
+    public String rateHandler(HttpSession session, HttpServletRequest request, @ModelAttribute("book") Book book, Model model) {
+        cartHandler.addItemToCart(book);
+
+        session.setAttribute("cartHandler", cartHandler.getCartItems());
 
 
-        if (cart == null) {
-            cart = new ArrayList<>();
-            session.setAttribute("cart", cart);
-        }
-        cart.add(book);
 
-        model.addAttribute("book", book);
         System.out.println(book.getTitle());
         String referer = request.getHeader("Referer");
         return "redirect:" + referer;
     }
+
+    @PostMapping("/addExistingBook")
+        public String addOneExistingBook(HttpSession session, HttpServletRequest request, int cartItemIndex){
+
+        cartHandler.addItemQTY(cartItemIndex);
+        session.setAttribute("totalprice", Math.ceil(cartHandler.getTotalPriceInCart()*100)/100);
+        session.setAttribute("totalItems", cartHandler.getTotalNumberOfItemsInCart());
+
+
+        return "shopcart";
+    }
+
+    @PostMapping("/subExistingBook")
+    public String subOneExistingBook(HttpSession session, HttpServletRequest request, int cartItemIndex){
+
+        cartHandler.subItemQTY(cartItemIndex);
+        session.setAttribute("totalprice", Math.ceil(cartHandler.getTotalPriceInCart()*100)/100);
+        session.setAttribute("totalItems", cartHandler.getTotalNumberOfItemsInCart());
+
+
+        return "shopcart";
+    }
+
+
+
 
     @GetMapping("/startpage")
     public String startpage(HttpSession session) {
@@ -138,10 +161,15 @@ public class BookController {
     }
 
     @GetMapping("/shopcart")
-    public String shopcart(HttpSession session, Shopcart shopcart) {
-
+    public String shopcart(HttpSession session) {
+        session.setAttribute("cartHandler", cartHandler.getCartItems());
+        session.setAttribute("totalprice", Math.ceil(cartHandler.getTotalPriceInCart()*100)/100);
+        session.setAttribute("totalItems", cartHandler.getTotalNumberOfItemsInCart());
         return "shopcart";
     }
+
+
+
 
     @GetMapping("/orders")
     public String orders(HttpSession session) {
