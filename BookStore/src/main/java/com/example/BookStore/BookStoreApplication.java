@@ -18,10 +18,14 @@ Short description of the project
 - Webshop for books with a shop cart, user account page etc.
 
 *Must-have features*
-*SHOPCART PONTUS+
-*LOGIN ÅSA
-*CSS/STYLING
-*
+#Ongoing#
+* SHOPCART PONTUS+
+* LOGIN ÅSA
+* CSS/STYLING IVAN
+* USER CLASS
+
+#To do#
+Add/remove/edit
 
 - Login for admin
 1. add/remove/edit books *USER AUTH*
