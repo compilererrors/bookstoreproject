@@ -32,6 +32,10 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+<<<<<<< HEAD
+=======
+
+>>>>>>> e9cf3eba461a12002d543ff49182cab05f1cb289
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
