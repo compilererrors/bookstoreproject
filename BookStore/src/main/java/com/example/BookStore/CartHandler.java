@@ -47,7 +47,7 @@ public class CartHandler {
 
 
             if(cartItemID == bookID){
-                cartItems.get(i);
+                return cartItems.get(i);
 
             }
         }
@@ -62,7 +62,7 @@ public class CartHandler {
             int bookId = book.getId();
 
             if(cartItemID == bookId){
-                cartItems.get(i);
+                return cartItems.get(i);
 
             }
         }
