@@ -41,8 +41,11 @@ height: 15px;
 
 }
 
-#paginatorId {
+#paginationId {
     position: relative;
-        float: right;
-        left: -450px;
+    float: right;
+    padding: 12px 20px;
+    position: center;
+    left: -450px;
+
 }
