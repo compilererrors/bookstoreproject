@@ -185,19 +185,10 @@ public class BookController {
             //restTemplate.put("http://localhost:8080/book/" + book.getId(), book, Book.class);
         }
 
-        return "redirect:/";
+        return "redirect:/adminview";
     }
 
-    /*@PostMapping("/editbook")
-    public String editbook(@ModelAttribute Book book) {
 
-            repository.editBook(book);
-            // todo replace with call PUT /book/{id} (with book object as json in request body
-            //restTemplate.put("http://localhost:8080/book/" + book.getId(), book, Book.class);
-
-
-        return "redirect:/adminview";
-    } */
     @GetMapping("/edit/{id}")
     public String edit(Model model, @PathVariable int id) {
         //Book book = restTemplate.getForObject("http://localhost:8080/book/" + id, Book.class);

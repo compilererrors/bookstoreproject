@@ -86,7 +86,7 @@
 
             <h1>Edit book</h1>
 
-            <form th:action="${/editbook}" th:object="${book}" method="POST">
+            <form th:action="@{/editbook}" th:object="${book}" method="POST">
                 Title: <input type="text" th:field="*{title}"/>
                 Author: <input type="text" th:field="*{author}"/>
                 Price: <input type="text" th:field="*{price}"/>
