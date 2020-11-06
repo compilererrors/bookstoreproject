@@ -109,23 +109,33 @@
                         </div>
 
                     </ol>
+        <nav aria-label="...">
+                <span id="paginationId" class="pagination pagination-lg">
+                    <div class="page-link">
+                        <li class="page-item active" aria-current="page">
+
+                            <span class="page-item" th:if="${showPrev}">
+                                <a th:href="'/adminview?page=' + ${currentPage-1}" th:text="Previous"></a>
+                            </span>
+
+                            <span class="page-item" th:each="page : ${pages}">
+                                <span th:if="${currentPage == page}" th:text="${page}"></span>
+                                <a th:if="${currentPage != page}" th:href="'/adminview?page=' + ${page}" th:text="${page}"></a>
+                            </span>
+
+                            <span class="page-item" th:if="${showNext}">
+                                <a th:href="'/adminview?page=' + ${currentPage+1}" th:text="Next"></a>
+                            </span>
+
+                        </li>
+                    </div>
+                </span>
+        </nav>
                 </div>
             </div>
 
 
-            <div class="paginator">
-                <span th:if="${showPrev}">
-                    <a th:href="'/adminview?page=' + ${currentPage-1}" th:text="Previous"></a>
-                </span>
 
-                <span th:each="page : ${pages}">
-                    <span th:if="${currentPage == page}" th:text="${page}"></span>
-                    <a th:if="${currentPage != page}" th:href="'/adminview?page=' + ${page}" th:text="${page}"></a>
-                </span>
-
-                <span th:if="${showNext}">
-                    <a th:href="'/adminview?page=' + ${currentPage+1}" th:text="Next"></a>
-                </span>
             </div>
         </div>
     </div>

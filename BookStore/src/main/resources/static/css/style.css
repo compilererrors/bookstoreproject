@@ -40,3 +40,9 @@ height: 15px;
   padding-bottom: 10px;
 
 }
+
+#paginatorId {
+    position: relative;
+        float: right;
+        left: -450px;
+}
