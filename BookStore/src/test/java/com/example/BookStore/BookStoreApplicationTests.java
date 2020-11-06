@@ -1,6 +1,7 @@
 package com.example.BookStore;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,9 @@ public class BookStoreApplicationTests {
 	private CartHandler cartHandler;
 
 	@Autowired
+	private BookRepository repository;
+
+	@Autowired
 	ObjectMapper mapper;
 
 	@Test
@@ -41,12 +45,7 @@ public class BookStoreApplicationTests {
 				.andExpect(MockMvcResultMatchers.content().string(containsString("Spring Boot in Action")));
 	}
 
-	@Test
-	public void testAddBookToCart(){
 
-
-
-	}
 
 }
 
