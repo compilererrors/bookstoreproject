@@ -21,6 +21,9 @@ public class BookStoreApplicationTests {
 	MockMvc mvc;
 
 	@Autowired
+	private CartHandler cartHandler;
+
+	@Autowired
 	ObjectMapper mapper;
 
 	@Test
@@ -36,6 +39,13 @@ public class BookStoreApplicationTests {
 				.andExpect(MockMvcResultMatchers.content().string(containsString("New book")))
 				.andExpect(MockMvcResultMatchers.content().string(containsString("Cloud-Native Applications in Java")))
 				.andExpect(MockMvcResultMatchers.content().string(containsString("Spring Boot in Action")));
+	}
+
+	@Test
+	public void testAddBookToCart(){
+
+		
+
 	}
 
 }
