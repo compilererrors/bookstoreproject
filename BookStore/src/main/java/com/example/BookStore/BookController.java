@@ -174,7 +174,7 @@ public class BookController {
     }
 
     @PostMapping("/editbook")
-    public String editbook(@ModelAttribute Book book) {
+    public String editz(@ModelAttribute Book book) {
         if (book.isNew()) {
             //Book newBook = restTemplate.postForObject("http://localhost:8080/book/", book, Book.class);
             repository.addBook(book); // todo replace with call POST /book (with book object as json in request body)
@@ -186,6 +186,24 @@ public class BookController {
         }
 
         return "redirect:/";
+    }
+
+    /*@PostMapping("/editbook")
+    public String editbook(@ModelAttribute Book book) {
+
+            repository.editBook(book);
+            // todo replace with call PUT /book/{id} (with book object as json in request body
+            //restTemplate.put("http://localhost:8080/book/" + book.getId(), book, Book.class);
+
+
+        return "redirect:/adminview";
+    } */
+    @GetMapping("/edit/{id}")
+    public String edit(Model model, @PathVariable int id) {
+        //Book book = restTemplate.getForObject("http://localhost:8080/book/" + id, Book.class);
+        Book book = repository.getBook(id); // todo replace with call GET /book/{id}
+        model.addAttribute(book);
+        return "adminedit";
     }
 
 
