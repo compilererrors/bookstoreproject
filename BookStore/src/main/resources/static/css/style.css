@@ -16,8 +16,16 @@ strong {
 }
 
 
+#deleteButtonDiv {
+height: 15px;
 
+}
 
+#deleteButton {
+    position: relative;
+    float: right;
+
+}
 
 .form-control {
     /*width: 50%;*/
