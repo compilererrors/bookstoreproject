@@ -162,7 +162,7 @@ public class BookController {
     }
 
     @PostMapping("/editbook")
-    public String set(@ModelAttribute Book book) {
+    public String editbook(@ModelAttribute Book book) {
         if (book.isNew()) {
             //Book newBook = restTemplate.postForObject("http://localhost:8080/book/", book, Book.class);
             repository.addBook(book); // todo replace with call POST /book (with book object as json in request body)
