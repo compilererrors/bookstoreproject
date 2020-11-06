@@ -41,7 +41,13 @@
 <div class="container">
     <div id="wrapper" class="column">
         <div id="inner">
+            <h1>Book</h1>
+            <div>
 
+                <a th:href="@{'/adminview?page=' + ${page}}"><span th:text="'Back to page ' + ${page}"></span></a>
+
+
+            </div>
 
 
             <table>
@@ -74,7 +80,7 @@
                 <button type="submit">Add to cart</button>
             </form>
 
-            
+
         </div>
     </div>
 
