@@ -115,6 +115,18 @@ public class BookController {
         return "/book";
     }*/
 
+    @RequestMapping(value = "/adminbook/{page}/{id}/addBook", method = RequestMethod.POST)
+    public String rateHandler2(HttpSession session, HttpServletRequest request, @ModelAttribute("book") Book book, Model model) {
+        cartHandler.addItemToCart(book);
+        session.setAttribute("totalItems", cartHandler.getTotalNumberOfItemsInCart());
+        session.setAttribute("cartHandler", cartHandler.getCartItems());
+
+        System.out.println(book.getTitle());
+        String referer = request.getHeader("Referer");
+        return "redirect:" + referer;
+    }
+
+
     @RequestMapping(value = "/book/{page}/{id}/addBook", method = RequestMethod.POST)
     public String rateHandler(HttpSession session, HttpServletRequest request, @ModelAttribute("book") Book book, Model model) {
         cartHandler.addItemToCart(book);
@@ -159,6 +171,21 @@ public class BookController {
         int lastpage = repository.numberOfPages(PAGE_SIZE);
 
         return "redirect:/adminview";
+    }
+
+    @PostMapping("/editbook")
+    public String editbook(@ModelAttribute Book book) {
+        if (book.isNew()) {
+            //Book newBook = restTemplate.postForObject("http://localhost:8080/book/", book, Book.class);
+            repository.addBook(book); // todo replace with call POST /book (with book object as json in request body)
+        }
+        else {
+            repository.editBook(book);
+            // todo replace with call PUT /book/{id} (with book object as json in request body
+            //restTemplate.put("http://localhost:8080/book/" + book.getId(), book, Book.class);
+        }
+
+        return "redirect:/";
     }
 
 

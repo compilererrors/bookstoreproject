@@ -26,8 +26,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
                 .logout()
-                .permitAll();
+                .logoutUrl("/logout")
+                .logoutSuccessUrl("/login")
+                .permitAll()
+                .deleteCookies("JSESSIONID")
+                .invalidateHttpSession(true)
+                .and()
+                .exceptionHandling()
+                .accessDeniedHandler(new CustomAccessDeniedHandler());
+
+
     }
+
+
 
     @Override
     public void configure(WebSecurity web) throws Exception {

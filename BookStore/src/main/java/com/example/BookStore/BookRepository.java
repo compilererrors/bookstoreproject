@@ -31,6 +31,16 @@ public class BookRepository {
         return book;
     }
 
+    public Book editBook(Book book) {
+        Book bookToEdit = this.getBook(book.getId());
+        if (bookToEdit != null) {
+            bookToEdit.setAuthor(book.getAuthor());
+            bookToEdit.setTitle(book.getTitle());
+            bookToEdit.setPrice(book.getPrice());
+        }
+        return book;
+    }
+
     public List<Book> getPage(int page, int pageSize) {
         int from = Math.max(0,page*pageSize);
         int to = Math.min(books.size(),(page+1)*pageSize);

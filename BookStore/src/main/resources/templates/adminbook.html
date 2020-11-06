@@ -52,6 +52,8 @@
 
 
             </div>
+
+
             <table>
                 <tr>
                     <th>Title</th>
@@ -79,12 +81,10 @@
                 <input type="hidden" th:field="*{author}"/>
                 <input type="hidden" th:field="*{price}"/>
                 <input type="hidden" th:field="*{date}"/>
-                <button type="submit">Add to cart</button>
+                <button type="submit">save</button>
             </form>
 
-            <ul th:each="item : ${session.cartHandler}">
-                <li th:text="'id' + ${item.book.id} + ' ' + ${item.book.title} + ' added to cart. Qty=' + ${item.qty}"></li>
-            </ul>
+
         </div>
     </div>
 
