@@ -161,6 +161,21 @@ public class BookController {
         return "redirect:/adminview";
     }
 
+    @PostMapping("/editbook")
+    public String set(@ModelAttribute Book book) {
+        if (book.isNew()) {
+            //Book newBook = restTemplate.postForObject("http://localhost:8080/book/", book, Book.class);
+            repository.addBook(book); // todo replace with call POST /book (with book object as json in request body)
+        }
+        else {
+            repository.editBook(book);
+            // todo replace with call PUT /book/{id} (with book object as json in request body
+            //restTemplate.put("http://localhost:8080/book/" + book.getId(), book, Book.class);
+        }
+
+        return "redirect:/";
+    }
+
 
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable int id) {
