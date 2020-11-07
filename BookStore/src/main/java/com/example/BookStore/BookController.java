@@ -73,47 +73,6 @@ public class BookController {
         return "redirect:" + "'/?page=' + ${page}";
     }
 
-    /*@GetMapping("/book/{page}/{id}/addBook")
-    public String addbook(Model model, @PathVariable Integer page, @PathVariable Integer id) {
-        Book book = repository.getBook(id);
-        model.addAttribute("page", page);
-        model.addAttribute("book", book);
-
-        return "book";
-    }*/
-
-
-    /*@PostMapping("/add")
-    public String addToCart(HttpSession session, @ModelAttribute Book book, Model model){
-        List<Book> cart = (List<Book>) session.getAttribute("cart");
-        model.addAttribute("book", book);
-        System.out.println(book.getId());
-
-
-        if (cart == null) {
-            cart = new ArrayList<>();
-            session.setAttribute("cart", cart);
-        }
-        cart.add(book);
-
-        return "book";
-    }*/
-
-
-    /*@RequestMapping(value = "/addBook", method = RequestMethod.POST)
-    public String submitBook(HttpSession session, @ModelAttribute("book") Book book, Model model) {
-        List<Book> cart = (List<Book>) session.getAttribute("cart");
-        model.addAttribute("book", book);
-        System.out.println(book);
-
-
-        if (cart == null) {
-            cart = new ArrayList<>();
-            session.setAttribute("cart", cart);
-        }
-        cart.add(book);
-        return "/book";
-    }*/
 
     @RequestMapping(value = "/adminbook/{page}/{id}/addBook", method = RequestMethod.POST)
     public String rateHandler2(HttpSession session, HttpServletRequest request, @ModelAttribute("book") Book book, Model model) {
@@ -196,27 +155,11 @@ public class BookController {
     }
 
 
-
-    /*@GetMapping("/startpage")
-    public String startpage(HttpSession session) {
-        String username = (String) session.getAttribute("username");
-        if (username != null && username.equals("admin")) {
-            return "books";
-        }
-        return "books";
-    }*/
-
     @GetMapping("/login")
     public String level1() {
         return "login";
     }
 
-
-    /*@GetMapping("/logout")
-    String logout(HttpSession session) {
-        session.invalidate();
-        return "login1";
-    }*/
 
     @GetMapping("/shopcart")
     public String shopcart(HttpSession session) {
@@ -225,8 +168,6 @@ public class BookController {
         session.setAttribute("totalItems", cartHandler.getTotalNumberOfItemsInCart());
         return "shopcart";
     }
-
-
 
 
     @GetMapping("/orders")
