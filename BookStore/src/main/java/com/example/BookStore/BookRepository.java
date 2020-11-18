@@ -1,16 +1,38 @@
 package com.example.BookStore;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
+import javax.sql.DataSource;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+
 
 @Service
 public class BookRepository {
     private List<Book> books;
 
+
+
+
     public BookRepository() {
         books = new ArrayList<>();
+/*
+        try (Connection conn = dataSource.getConnection()) { // we don't need to close with finally
+
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM BOOK");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+*/
+
+
+
 
         for (int i = 1; i <= 95; i++) {
             books.add(new Book(200+i, "Book Title " + i, "Author name " + i, 40 + i + 1.99, "Dec 31, " + (1910+i)));

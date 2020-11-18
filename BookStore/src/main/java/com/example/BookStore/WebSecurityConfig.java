@@ -18,7 +18,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/", "/orders", "/book/**", "/shopcart", "/addExistingBook", "/subExistingBook").permitAll()
+                .antMatchers("/","/h2","/h2/**","/test", "/orders", "/book/**", "/shopcart", "/addExistingBook", "/subExistingBook").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -34,6 +34,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .exceptionHandling()
                 .accessDeniedHandler(new CustomAccessDeniedHandler());
+        http.csrf().disable();
+        http.headers().frameOptions().disable();
 
 
     }
