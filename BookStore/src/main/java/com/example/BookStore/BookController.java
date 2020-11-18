@@ -41,7 +41,7 @@ public class BookController {
         return "adminbooks";
     }
     @GetMapping("/adminbook/{page}/{id}")
-    public String adminbook(Model model, @PathVariable Integer page, @PathVariable Long id) {
+    public String adminbook(Model model, @PathVariable Integer page, @PathVariable int id) {
         getBookPageAndId(model, page, id);
 
         return "adminbook";
@@ -55,8 +55,11 @@ public class BookController {
     }
 
     @GetMapping("/book/{page}/{id}")
-    public String book(Model model, @PathVariable Integer page, @PathVariable Long id) {
-        getBookPageAndId(model, page, id);
+    public String book(Model model, @PathVariable Integer page, @PathVariable int id) {
+
+        model.addAttribute("page", page);
+        model.addAttribute("book", service.getBookById(id));
+
 
         return "book";
     }
@@ -150,7 +153,7 @@ public class BookController {
 
 
     @GetMapping("/delete/{id}")
-    public String delete(@PathVariable Long id) {
+    public String delete(@PathVariable int id) {
         service.deleteBookById(id);
         return "redirect:/adminview";
     }
@@ -202,7 +205,7 @@ public class BookController {
 
 
 
-    private void getBookPageAndId(Model model, int page, Long id) {
+    private void getBookPageAndId(Model model, int page, int id) {
         Book book = service.getBookById(id);
 
         model.addAttribute("page", page);

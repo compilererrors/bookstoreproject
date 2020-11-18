@@ -28,18 +28,18 @@ public class BookService {
         return (int)Math.ceil(new Double( (int)bookRepository.count() )/ PAGE_SIZE );
     }
 
-    public void deleteBookById(Long id){
+    public void deleteBookById(int id){
         bookRepository.deleteById(id);
     }
 
-    public Book getBookById(Long id){
+    public Book getBookById(int id){
         return  bookRepository.findById(id).get();
     }
 
 
 
     public List<Book> getSubBooks(int page){
-        int from = Math.max(1,page*PAGE_SIZE);
+        int from = Math.max(1,page*PAGE_SIZE+1);
         int to = Math.min((int)bookRepository.count(), (page+1)*PAGE_SIZE);
 
               /*

@@ -25,7 +25,7 @@ public class CartHandlerTests {
 
         //CartHandler consists of a cartItem (book + qty)
         //If adding a new book qty of that book = 1 and totalqty = 1
-        cartHandler.addItemToCart(service.getBookById(1L));
+        cartHandler.addItemToCart(service.getBookById(1));
 
         //total number of Items in cart
         Assert.assertEquals(1, cartHandler.getTotalNumberOfItemsInCart());
@@ -40,7 +40,7 @@ public class CartHandlerTests {
 
         //CartHandler consists of a cartItem (book + qty)
         //If adding a new book qty of that book = 1 and totalqty = 1
-        cartHandler.addItemToCart(service.getBookById(1L));
+        cartHandler.addItemToCart(service.getBookById(1));
 
         //total number of Items in cart
         Assert.assertEquals(1, cartHandler.getTotalNumberOfItemsInCart());
@@ -49,7 +49,7 @@ public class CartHandlerTests {
         Assert.assertEquals(1, cartHandler.getCartItems().get(0).getQty());
 
         //add same book again
-        cartHandler.addItemToCart(service.getBookById(1L));
+        cartHandler.addItemToCart(service.getBookById(1));
 
         //total number of Items in cart
         Assert.assertEquals(2, cartHandler.getTotalNumberOfItemsInCart());
@@ -64,7 +64,7 @@ public class CartHandlerTests {
 
         //CartHandler consists of a cartItem (book + qty)
         //If adding a new book qty of that book = 1 and totalqty = 1
-        cartHandler.addItemToCart(service.getBookById(1L));
+        cartHandler.addItemToCart(service.getBookById(1));
 
         //total number of Items in cart
         Assert.assertEquals(1, cartHandler.getTotalNumberOfItemsInCart());
@@ -73,7 +73,7 @@ public class CartHandlerTests {
         Assert.assertEquals(1, cartHandler.getCartItems().get(0).getQty());
 
         //add another book
-        cartHandler.addItemToCart(service.getBookById(1L));
+        cartHandler.addItemToCart(service.getBookById(1));
 
         //total number of Items in cart
         Assert.assertEquals(2, cartHandler.getTotalNumberOfItemsInCart());
@@ -91,7 +91,7 @@ public class CartHandlerTests {
 
         //CartHandler consists of a cartItem (book + qty)
         //If adding a new book qty of that book = 1 and totalqty = 1
-        cartHandler.addItemToCart(service.getBookById(1L));
+        cartHandler.addItemToCart(service.getBookById(1));
 
         //add the same book again from cart, i.e. call add method for a specific index. In this case index 0
         cartHandler.addItemQTY(0);
@@ -110,7 +110,7 @@ public class CartHandlerTests {
     public void testRemoveQtyDirectlyInCart(){
 
        //1. Add book1
-        cartHandler.addItemToCart(service.getBookById(1L));
+        cartHandler.addItemToCart(service.getBookById(1));
 
         //2. Add book1 from cart twice
         cartHandler.addItemQTY(0);
