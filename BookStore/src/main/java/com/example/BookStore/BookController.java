@@ -18,11 +18,12 @@ import java.util.List;
 @Controller
 public class BookController {
 
-    private static final int PAGE_SIZE = 10;
+
 
 
     @Autowired
-    private BookRepository repository;
+    private BookService service;
+
     @Autowired
     private CartHandler cartHandler;
 
@@ -40,7 +41,7 @@ public class BookController {
         return "adminbooks";
     }
     @GetMapping("/adminbook/{page}/{id}")
-    public String adminbook(Model model, @PathVariable Integer page, @PathVariable Integer id) {
+    public String adminbook(Model model, @PathVariable Integer page, @PathVariable Long id) {
         getBookPageAndId(model, page, id);
 
         return "adminbook";
@@ -54,7 +55,7 @@ public class BookController {
     }
 
     @GetMapping("/book/{page}/{id}")
-    public String book(Model model, @PathVariable Integer page, @PathVariable Integer id) {
+    public String book(Model model, @PathVariable Integer page, @PathVariable Long id) {
         getBookPageAndId(model, page, id);
 
         return "book";
@@ -126,9 +127,9 @@ public class BookController {
 
     @PostMapping("/save")
     public String set(@ModelAttribute Book book) {
-            repository.addBook(book);
+            service.addBook(book);
 
-        int lastpage = repository.numberOfPages(PAGE_SIZE);
+        int lastage = service.getLastPage();
 
         return "redirect:/adminview";
     }
@@ -136,12 +137,11 @@ public class BookController {
     @PostMapping("/editbook")
     public String editbook(@ModelAttribute Book book) {
         if (book.isNew()) {
-            //Book newBook = restTemplate.postForObject("http://localhost:8080/book/", book, Book.class);
-            repository.addBook(book); // todo replace with call POST /book (with book object as json in request body)
+
+            service.addBook(book); // todo  should not have if and else in controller do like yesterday
         }
         else {
-            repository.editBook(book);
-            // todo replace with call PUT /book/{id} (with book object as json in request body
+            service.addBook(book);; // todo  should not have if and else in controller do like yesterday
             //restTemplate.put("http://localhost:8080/book/" + book.getId(), book, Book.class);
         }
 
@@ -150,8 +150,8 @@ public class BookController {
 
 
     @GetMapping("/delete/{id}")
-    public String delete(@PathVariable int id) {
-        repository.deleteBook(id);
+    public String delete(@PathVariable Long id) {
+        service.deleteBookById(id);
         return "redirect:/adminview";
     }
 
@@ -187,8 +187,9 @@ public class BookController {
     }
 
     private void getBooks(Model model, int page) {
-        List<Book> books = repository.getPage(page - 1, PAGE_SIZE);
-        int pageCount = repository.numberOfPages(PAGE_SIZE);
+        List<Book> books = service.getSubBooks(page-1) ;
+
+        int pageCount = service.getPageCount();
         int[] pages = toArray(pageCount);
 
         model.addAttribute("books", books);
@@ -198,8 +199,12 @@ public class BookController {
         model.addAttribute("showNext", page < pageCount);
 
     }
-    private void getBookPageAndId(Model model, int page, int id) {
-        Book book = repository.getBook(id);
+
+
+
+    private void getBookPageAndId(Model model, int page, Long id) {
+        Book book = service.getBookById(id);
+
         model.addAttribute("page", page);
         model.addAttribute("book", book);
     }
