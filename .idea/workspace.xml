@@ -20,6 +20,27 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="BookStoreApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.BookStore.BookStoreApplication" />
+      <module name="BookStore" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.BookStore.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.BookStoreApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -31,5 +52,27 @@
       <updated>1604744499262</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="765" y="-876" key="#com.intellij.ide.util.MemberChooser" timestamp="1605778661647">
+      <screen x="0" y="-1080" width="1920" height="1040" />
+    </state>
+    <state x="765" y="-876" key="#com.intellij.ide.util.MemberChooser/0.0.1920.999/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1605778661647" />
+    <state width="1877" height="293" key="GridCell.Tab.0.bottom" timestamp="1605780754392">
+      <screen x="0" y="-1080" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="293" key="GridCell.Tab.0.bottom/0.0.1920.999/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1605780754392" />
+    <state width="1877" height="293" key="GridCell.Tab.0.center" timestamp="1605780754391">
+      <screen x="0" y="-1080" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="293" key="GridCell.Tab.0.center/0.0.1920.999/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1605780754391" />
+    <state width="1877" height="293" key="GridCell.Tab.0.left" timestamp="1605780754391">
+      <screen x="0" y="-1080" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="293" key="GridCell.Tab.0.left/0.0.1920.999/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1605780754391" />
+    <state width="1877" height="293" key="GridCell.Tab.0.right" timestamp="1605780754392">
+      <screen x="0" y="-1080" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="293" key="GridCell.Tab.0.right/0.0.1920.999/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1605780754392" />
   </component>
 </project>

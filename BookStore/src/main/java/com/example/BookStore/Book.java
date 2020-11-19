@@ -14,14 +14,16 @@ public class Book {
     private String author;
     private Double price;
     private String date;
+    private String thumbnail;
 
 
-    public Book(Integer id, String title, String author, Double price, String date) {
+    public Book(Integer id, String title, String author, Double price, String date, String thumbnail) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.price = price;
         this.date = date;
+        this.thumbnail = thumbnail;
     }
 
     public Book() {
@@ -72,6 +74,11 @@ public class Book {
         this.date = date;
     }
 
+    public String getThumbnail() {
+        return thumbnail;
+    }
 
-
+    public void setThumbnail(String thumbnail) {
+        this.thumbnail = thumbnail;
+    }
 }
