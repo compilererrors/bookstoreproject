@@ -99,12 +99,12 @@
             </table>
 
 
-            <form ACTION="#" th:action="@{/adminbook/{page}/{id}/addBook}" th:object="${book}" method="POST">
-                <input type="hidden" th:field="*{id}"/>
-                <input type="hidden" th:field="*{title}"/>
-                <input type="hidden" th:field="*{author}"/>
-                <input type="hidden" th:field="*{price}"/>
-                <input type="hidden" th:field="*{date}"/>
+            <form ACTION="#" th:action="@{/save}" th:object="${book}" method="POST">
+                <input th:if="*{id!=null}" type="hidden" th:field="*{id}"/>
+                <input  th:field="*{title}"/>
+                <input  th:field="*{author}"/>
+                <input  th:field="*{price}"/>
+                <input  th:field="*{date}"/>
                 <button type="submit">save</button>
             </form>
 

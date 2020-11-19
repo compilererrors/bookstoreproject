@@ -71,6 +71,7 @@
                     Title: <input type="text" th:field="*{title}"/>
                     Author: <input type="text" th:field="*{author}"/>
                     Price: <input type="text" th:field="*{price}"/>
+                    Date(ex:November 25, 1974): <input type="text" placeholder="November 25, 1974" th:field="*{date}"/>
                     <input th:if="${book.id != null}" type="hidden" th:field="*{id}"/>
                     <input type="submit" value="Save book">
                 </form>

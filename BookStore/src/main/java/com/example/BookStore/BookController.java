@@ -54,6 +54,16 @@ public class BookController {
         return "book";
     }
 
+    @GetMapping("/edit/{id}")
+    public String edit(Model model, @PathVariable int id) {
+        Book book = service.getBookById(id);
+
+        model.addAttribute("book" ,book);
+        return "adminadd";
+    }
+
+
+
     @GetMapping("/book/{page}/{id}")
     public String book(Model model, @PathVariable Integer page, @PathVariable int id) {
 
