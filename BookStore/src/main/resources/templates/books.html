@@ -76,11 +76,12 @@
                         <tr>
                             <div class="card custom-card text-center mr-2 mt-2 ml-2 mb-2"
                                  style="width: 15rem; display: inline-block">
-                                <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" role="img">
+                                <img th:src="${book.thumbnail}" class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" role="img">
                                     <title>Placeholder</title>
+
                                     <rect width="100%" height="100%" fill="#868e96"/>
-                                    <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
-                                </svg>
+
+                                </img>
                                 <div class="card-body">
                                     <h5 class="card-title" th:text="${book.title}">Id</h5>
                                     <p class="card-text"> "th:text="${book.title}" Description TBA</p>
@@ -88,6 +89,20 @@
                                     <a th:href="'/book/' + ${currentPage} + '/' + ${book.id}"
                                        class="stretched-link btn btn-sm btn-primary mr-2"><i
                                             class="fas fa-rocket mr-2"></i> View book</a>
+
+                                    <form ACTION="#" th:action="@{/addToCart}" th:object="${book}" method="POST">
+                                        <input type="hidden" th:value="*{id}"/>
+                                        <input type="hidden" th:value="*{title}"/>
+                                        <input type="hidden" th:value="*{author}"/>
+                                        <input type="hidden" th:value="*{price}"/>
+                                        <input type="hidden" th:value="*{date}"/>
+
+                                        <button type="submit"class="stretched-link btn btn-sm btn-primary mr-2"><i
+                                                class="fas fa-rocket mr-2"></i>Add to cart</button>
+                                    </form>
+
+
+
                                 </div>
                             </div>
                         </tr>
@@ -103,7 +118,7 @@
                     <h1>
                         <div class="panel-heading">Books</div>
                     </h1>
-                    
+
                     <nav aria-label="...">
                 <span id="paginationId" class="pagination pagination-lg">
                     <div class="page-link">

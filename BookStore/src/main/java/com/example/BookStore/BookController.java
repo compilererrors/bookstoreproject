@@ -108,6 +108,17 @@ public class BookController {
         return "redirect:" + referer;
     }
 
+    @RequestMapping(value = "/addToCart", method = RequestMethod.POST)
+    public String rateHandler22(HttpSession session, HttpServletRequest request, @ModelAttribute("book") Book book, Model model) {
+        cartHandler.addItemToCart(book);
+        session.setAttribute("totalItems", cartHandler.getTotalNumberOfItemsInCart());
+        session.setAttribute("cartHandler", cartHandler.getCartItems());
+
+        System.out.println(book.getTitle());
+        String referer = request.getHeader("referer");
+        return "redirect:/" + referer;
+    }
+
     @PostMapping("/addExistingBook")
         public String addOneExistingBook(HttpSession session, HttpServletRequest request, int cartItemIndex){
 
