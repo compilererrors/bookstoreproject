@@ -87,15 +87,17 @@
                                     <p class="card-text"> "th:text="${book.title}" Description TBA</p>
                                     <p class="card-text" th:text="${book.price}">Desc</p>
                                     <a th:href="'/book/' + ${currentPage} + '/' + ${book.id}"
-                                       class="stretched-link btn btn-sm btn-primary mr-2"><i
+                                       class="hej"><i
                                             class="fas fa-rocket mr-2"></i> View book</a>
 
-                                    <form ACTION="#" th:action="@{/addToCart}" th:object="${book}" method="POST">
-                                        <input type="hidden" th:value="*{id}"/>
-                                        <input type="hidden" th:value="*{title}"/>
-                                        <input type="hidden" th:value="*{author}"/>
-                                        <input type="hidden" th:value="*{price}"/>
-                                        <input type="hidden" th:value="*{date}"/>
+
+                                    <!--/book/{page}/{id}/addBook-->
+                                    <form ACTION="#" th:action="@{'/book/' + ${currentPage} + '/' + ${book.id} + '/addBook'}" th:object="${book}" method="POST">
+                                        <input type="hidden" th:value="${book.id}"/>
+                                        <input type="hidden" th:value="${book.title}"/>
+                                        <input type="hidden" th:value="${book.author}"/>
+                                        <input type="hidden" th:value="${book.price}"/>
+                                        <input type="hidden" th:value="${book.date}"/>
 
                                         <button type="submit"><i
                                                 class="fas fa-rocket mr-2"></i>DONT USE THIS Add to cart</button>

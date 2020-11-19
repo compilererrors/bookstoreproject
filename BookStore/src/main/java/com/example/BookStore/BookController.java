@@ -86,8 +86,8 @@ public class BookController {
 
 
     @RequestMapping(value = "/adminbook/{page}/{id}/addBook", method = RequestMethod.POST)
-    public String rateHandler2(HttpSession session, HttpServletRequest request, @ModelAttribute("book") Book book, Model model) {
-        cartHandler.addItemToCart(book);
+    public String rateHandler2(HttpSession session, HttpServletRequest request, @ModelAttribute("book") Book book, Model model, @PathVariable int id) {
+        cartHandler.addItemToCart((Book)service.getBookById(id));
         session.setAttribute("totalItems", cartHandler.getTotalNumberOfItemsInCart());
         session.setAttribute("cartHandler", cartHandler.getCartItems());
 
@@ -98,8 +98,8 @@ public class BookController {
 
 
     @RequestMapping(value = "/book/{page}/{id}/addBook", method = RequestMethod.POST)
-    public String rateHandler(HttpSession session, HttpServletRequest request, @ModelAttribute("book") Book book, Model model) {
-        cartHandler.addItemToCart(book);
+    public String rateHandler(HttpSession session, HttpServletRequest request, @ModelAttribute("book") Book book, Model model, @PathVariable int id) {
+        cartHandler.addItemToCart((Book)service.getBookById(id));
         session.setAttribute("totalItems", cartHandler.getTotalNumberOfItemsInCart());
         session.setAttribute("cartHandler", cartHandler.getCartItems());
 

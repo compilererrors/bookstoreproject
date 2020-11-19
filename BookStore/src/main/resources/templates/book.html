@@ -103,12 +103,12 @@
             </table>
 
 
-            <form ACTION="#" th:action="@{/book/{page}/{id}/addBook}" th:object="${book}" method="POST">
-                <input type="hidden" th:field="*{id}"/>
+            <form ACTION="#" th:action="@{'/book/' + ${currentPage} + '/' + ${book.id} + '/addBook'}" th:object="${book}" method="POST">
+              <!--  <input type="hidden" th:field="*{id}"/>
                 <input type="hidden" th:field="*{title}"/>
                 <input type="hidden" th:field="*{author}"/>
                 <input type="hidden" th:field="*{price}"/>
-                <input type="hidden" th:field="*{date}"/>
+                <input type="hidden" th:field="*{date}"/>-->
                 <button type="submit">Add to cart</button>
             </form>
 
