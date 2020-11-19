@@ -1,5 +1,11 @@
 package com.example.BookStore;
 
+
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class CartItem {
     public Book getBook() {
         return book;
@@ -16,6 +22,9 @@ public class CartItem {
     public void setQty(int qty) {
         this.qty = qty;
     }
+
+
+
 
     private Book book;
     private int qty;

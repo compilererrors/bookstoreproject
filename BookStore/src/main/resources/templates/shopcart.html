@@ -176,7 +176,7 @@
                         </tbody>
                     </table>
 -->
-                    <table  style="margin:150px;" th:if="${session.totalprice!=null}">
+                    <table  style="margin-left:150px;" th:if="${session.totalprice!=null}">
 
                         <tbody>
                         <tr>
@@ -185,7 +185,7 @@
                         </tr>
                         <tr>
                             <td><h3>Total Price:</h3></td>
-                            <td><h3><span th:text="'Total Price:'+ ${session.totalprice}"></span></h3></td>
+                            <td><h3><span th:text="${session.totalprice}"></span></h3></td>
                         </tr>
                         </tbody>
                     </table>
@@ -247,7 +247,7 @@
                         </label>
                     </div>
 
-                    <center><a class="btn btn-primary" th:href="@{'/order'}" role="button" style="width:200px;color:white;margin-top:20px">BUY</a></center>
+                    <center><a class="btn btn-primary" th:href="'/order'" role="button" style="width:200px;color:white;margin-top:20px">BUY</a></center>
                 </div>
             </div>
         </form>

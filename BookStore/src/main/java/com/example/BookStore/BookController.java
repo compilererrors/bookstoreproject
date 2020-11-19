@@ -129,6 +129,16 @@ public class BookController {
         return "shopcart";
     }
 
+    @GetMapping("/order")
+    public String showOrderConfirmation(HttpSession session, Model model){
+
+        session.setAttribute("cartHandler", cartHandler.getCartItems());
+        session.setAttribute("totalprice", Math.ceil(cartHandler.getTotalPriceInCart()*100)/100);
+        session.setAttribute("totalItems", cartHandler.getTotalNumberOfItemsInCart());
+        return "order";
+    }
+
+
     @PostMapping("/subExistingBook")
     public String subOneExistingBook(HttpSession session, HttpServletRequest request, int cartItemIndex){
 
