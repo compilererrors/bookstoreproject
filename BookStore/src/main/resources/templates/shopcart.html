@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/">Book store project</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -67,8 +67,15 @@
             </li>
         </ul>
     </div>
-</nav></nav>
-<div class="alert alert-success" role="alert" th:if="${session.totalItems>0}">
+</nav>
+<div class="alert alert-warning alert-dismissible fade show" role="alert" th:if="${session.totalItems<1}"><br><br><br><br><br><br>
+    <strong>Holy guacamole!</strong> You need to add at least one book.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<!--<div class="alert alert-success" role="alert" th:if="${session.totalItems>0}">
     <h4 class="alert-heading">SHOPPING CART!</h4>
     <p>You are almost there! Thanks for shopping!</p>
     <hr>
@@ -81,69 +88,100 @@
     </button>
 </div>
     <div class="container">
-
-
+-->
+<br><br>
+<h2>Your Cart</h2>
 
             <div class="shopcart">
-                <ul th:each="item : ${session.cartHandler}">
-                    <table>
 
+
+                    <style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:0px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:0px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-9wq8{border-color:inherit;text-align:center;vertical-align:middle}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+                    <style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:0px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:0px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-9wq8{border-color:inherit;text-align:center;vertical-align:middle;widht:250px;}
+.tg .tg-9wq88{border-color:inherit;text-align:center}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+
+
+                    <table th:each="item : ${session.cartHandler}" class="tg" width="100%">
+                        <thead>
                         <tr>
-                            <th>Title</th>
-                            <th th:text="${item.book.title}"></th>
+                            <th class="tg-0pky" colspan="3"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="tg-0pky"></td>
+                            <td class="tg-c3ow">QTY</td>
+                            <td class="tg-c3ow">QTY PRICE</td>
                         </tr>
                         <tr>
-                            <th>Author</th>
-                            <th th:text="${item.book.author}"></th>
+                            <td class="tg-0pky" width="200px"> <span th:text="'Title ' + ${item.book.title}"></span></td>
+                            <td class="tg-c3ow" rowspan="3"><center><table class="tg">
+                                <thead>
+                                <tr>
+                                    <th class="tg-c3ow"> <form ACTION="#" th:action="@{/subExistingBook}"  method="POST">
+                                        <button type="number" name="cartItemIndex" th:value="${itemStat.index}">-</button>
+                                    </form></th>
+                                    <th><span th:text="${item.qty}"></span></th>
+                                    <th> <form ACTION="#" th:action="@{/addExistingBook}"  method="POST">
+                                        <button type="number" name="cartItemIndex" th:value="${itemStat.index}">+</button>
+                                    </form></th>
+                                </tr>
+                                </thead>
+                            </table></center></td>
+                            <td class="tg-9wq88" rowspan="3"><span th:text="${item.book.price}"></span></td>
                         </tr>
                         <tr>
-                            <th>Price</th>
-                            <th th:text="${item.book.price}"></th>
+                            <td class="tg-0lax"><span th:text="'Author ' + ${item.book.author}"></span></td>
                         </tr>
                         <tr>
-                            <th>Date</th>
-                            <th th:text="${item.book.date}"></th>
+                            <td class="tg-0pky"><span th:text="'Date ' + ${item.book.Date}"></span></td>
                         </tr>
                         <tr>
-                            <th>Qty</th>
-                            <th th:text="${item.qty}"></th>
+                            <td class="tg-0lax" colspan="3"><hr></td>
                         </tr>
-                        <tr>
-
-                            <th>
-                                <form ACTION="#" th:action="@{/addExistingBook}"  method="POST">
-                                <button type="number" name="cartItemIndex" th:value="${itemStat.index}">+</button>
-                            </form>
-                            </th>
-
-                            <th>
-                                <form ACTION="#" th:action="@{/subExistingBook}"  method="POST">
-                                    <button type="number" name="cartItemIndex" th:value="${itemStat.index}">-</button>
-                                </form>
-
-
-                            </th>
-
-                        </tr>
-
-
+                        </tbody>
                     </table>
-                </ul>
 
-                <table>
-                    <thead>
-                    <tr>
-                        <th rowspan="2"><svg width="10em" height="10em" viewBox="0 0 16 16" class="bi bi-cart-check" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-                            <path fill-rule="evenodd" d="M11.354 5.646a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708 0z"/>
-                        </svg></th>
-                        <th><h2 th:if="${session.totalprice!=null}" th:text="'Total Price:'+ ${session.totalprice}"></h2></th>
-                    </tr>
-                    <tr>
-                        <td><h2 th:if="${session.totalItems!=null}" th:text="'Total QTY:'+ ${session.totalItems}"></h2></td>
-                    </tr>
-                    </thead>
-                </table>
+                    <table  style="margin:50px" th:if="${session.totalprice!=null}">
+                        <thead>
+                        <tr>
+                            <th>Sum</th>
+                            <th><span th:text="'Total Price:'+ ${session.totalprice}"></span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Freight</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td><b>Total Price</b></td>
+                            <td><span th:text="'Total Price:'+ ${session.totalprice}"></span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+
+
+
 
 
 
@@ -154,10 +192,61 @@
             </div>
 
 
-            <a href="/">Back to start page</a>
-        </div>
+<div widht="80%">
+<center>
+<p>
+    <a class="btn btn-primary" th:if="${session.totalItems>0}" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true" aria-controls="collapseExample" th:text="'Klarna Checkout - '+ ${session.totalprice}">
+    </a>
+
+<div class="collapse" id="collapseExample">
+    <div class="card card-body">
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="zipcode">Zip Code</label>
+                <input id="zipcode" class="form-control form-control-lg" type="Zip Code" placeholder="zip Code" >
+            </div>
+
+            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Select Delivery Method</a><br>
+
+            <div class="collapse" id="collapseExample2">
+                <div class="card card-body">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                            PostNord
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                        <label class="form-check-label" for="exampleRadios2">
+                           DB Schenker
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                        <label class="form-check-label" for="exampleRadios2">
+                            DH Freight
+                        </label>
+                    </div>
+
+                    <a class="btn btn-primary" th:href="@{'/order'}" role="button">BUY</a>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
+
+
+</center>
+</div>
+</body><div style="height:300px"></div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
