@@ -173,6 +173,11 @@ public class BookController {
         return "login";
     }
 
+    @GetMapping("/register")
+    public String register() {
+        return "userform";
+    }
+
 
     @GetMapping("/shopcart")
     public String shopcart(HttpSession session) {
