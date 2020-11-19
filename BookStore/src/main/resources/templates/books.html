@@ -70,50 +70,38 @@
 </nav>
 
     <div class="container">
-        <div class="row">
-            <div class="col-3" th:each="book : ${books}">
-                <table style="width: 100%">
-                        <tr>
-                            <div class="card custom-card text-center mr-2 mt-2 ml-2 mb-2"
-                                 style="width: 15rem; display: inline-block">
-                                <img th:src="${book.thumbnail}" class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" role="img">
-                                    <title>Placeholder</title>
 
-                                    <rect width="100%" height="100%" fill="#868e96"/>
+        <div class="row" >
+            <div class="col-sm" th:each="book : ${books}" style="width: 16rem;">
+                <div class="card custom-card text-center mr-2 mt-2 ml-2 mb-2" style="width: 14rem; display: inline-block">
+                    <img th:src="${book.thumbnail}" class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" role="img">
+                    <title>Placeholder</title>
 
-                                </img>
-                                <div class="card-body">
-                                    <h5 class="card-title" th:text="${book.title}">Id</h5>
-                                    <p class="card-text"> "th:text="${book.title}" Description TBA</p>
-                                    <p class="card-text" th:text="${book.price}">Desc</p>
-                                    <a th:href="'/book/' + ${currentPage} + '/' + ${book.id}"
-                                       class="hej"><i
-                                            class="fas fa-rocket mr-2"></i> View book</a>
+                    <rect width="100%" height="100%" fill="#868e96"/>
 
+                    </img>
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${book.title}">Id</h5>
+                        <p class="card-text"> "th:text="${book.title}" Description TBA</p>
+                        <p class="card-text" th:text="${book.price}">Desc</p>
+                        <a th:href="'/book/' + ${currentPage} + '/' + ${book.id}"
+                           class="hej"><i
+                                class="btn btn-info" th:text="'View book'" style="margin-bottom:20px;"></i> </a>
+                        <br>
 
-                                    <!--/book/{page}/{id}/addBook-->
-                                    <form ACTION="#" th:action="@{'/book/' + ${currentPage} + '/' + ${book.id} + '/addBook'}" th:object="${book}" method="POST">
-                                        <input type="hidden" th:value="${book.id}"/>
-                                        <input type="hidden" th:value="${book.title}"/>
-                                        <input type="hidden" th:value="${book.author}"/>
-                                        <input type="hidden" th:value="${book.price}"/>
-                                        <input type="hidden" th:value="${book.date}"/>
+                        <!--/book/{page}/{id}/addBook-->
+                        <form ACTION="#" th:action="@{'/book/' + ${currentPage} + '/' + ${book.id} + '/addBook'}" th:object="${book}" method="POST">
 
-                                        <button type="submit"><i
-                                                class="fas fa-rocket mr-2"></i>DONT USE THIS Add to cart</button>
-                                    </form>
-
-
-
-                                </div>
-                            </div>
-                        </tr>
-                </table>
+                            <button type="submit" class="btn btn-success" th:text="'Add to cart'"></button>
+                        </form>
             </div>
         </div>
-    </div>
 
 
+
+
+
+</div>
 
             <div class="container">
 
