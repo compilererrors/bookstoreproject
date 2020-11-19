@@ -69,36 +69,41 @@
     </div>
 </nav>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-3" th:each="book : ${books}">
+                <table style="width: 100%">
+                        <tr>
+                            <div class="card custom-card text-center mr-2 mt-2 ml-2 mb-2"
+                                 style="width: 15rem; display: inline-block">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" role="img">
+                                    <title>Placeholder</title>
+                                    <rect width="100%" height="100%" fill="#868e96"/>
+                                    <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+                                </svg>
+                                <div class="card-body">
+                                    <h5 class="card-title" th:text="${book.title}">Id</h5>
+                                    <p class="card-text"> "th:text="${book.title}" Description TBA</p>
+                                    <p class="card-text" th:text="${book.price}">Desc</p>
+                                    <a th:href="'/book/' + ${currentPage} + '/' + ${book.id}"
+                                       class="stretched-link btn btn-sm btn-primary mr-2"><i
+                                            class="fas fa-rocket mr-2"></i> View book</a>
+                                </div>
+                            </div>
+                        </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
             <div class="container">
                 <div class="panel panel-default">
                     <h1>
                         <div class="panel-heading">Books</div>
                     </h1>
-                    <ol class="list-group">
-
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg">
-
-                                    <tr th:each="book : ${books}" class="nav-item active">
-                                        <li class="list-group-item">
-
-                                            <div class="col-6 col-sm-3">
-                                                <td><a th:href="'/book/' + ${currentPage} + '/' + ${book.id}"
-                                                       th:text="${book.title}" class="list-link"></a></td>
-                                            </div>
-
-                                            <div class="col-6 col-sm-3">
-                                                <td th:text="${book.author}"></td>
-                                            </div>
-
-                                            <div class="col-6 col-sm-3">
-                                                <td th:text="${book.price}"></td>
-                                            </div>
-
-                                    </tr>
-                                </div></div></div>
-                    </ol>
+                    
                     <nav aria-label="...">
                 <span id="paginationId" class="pagination pagination-lg">
                     <div class="page-link">
@@ -132,12 +137,6 @@
     </div>
 </div>
 
-
-
-</div>
-</div>
-</div>
-</div>
 
 
 <!--<span th:if="${#httpServletRequest.remoteUser != null}" th:text="${#httpServletRequest.remoteUser}"></span>-->
