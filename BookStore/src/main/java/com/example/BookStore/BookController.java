@@ -18,7 +18,7 @@ import java.util.List;
 @Controller
 public class BookController {
 
-
+    List<Book> books;
 
 
     @Autowired
@@ -190,7 +190,7 @@ public class BookController {
     }
 
     private void getBooks(Model model, int page) {
-        List<Book> books = service.getSubBooks(page-1) ;
+        books = service.getSubBooks(page-1) ;
 
         int pageCount = service.getPageCount();
         int[] pages = toArray(pageCount);
