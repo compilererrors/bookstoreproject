@@ -87,7 +87,7 @@
                                     <p class="card-text"> "th:text="${book.title}" Description TBA</p>
                                     <p class="card-text" th:text="${book.price}">Desc</p>
                                     <a th:href="'/book/' + ${currentPage} + '/' + ${book.id}"
-                                       class="stretched-link btn btn-sm btn-primary mr-2"><i
+                                       class="btn btn-sm btn-primary mr-2"><i
                                             class="fas fa-rocket mr-2"></i> View book</a>
 
                                     <form ACTION="#" th:action="@{/addToCart}" th:object="${book}" method="POST">
@@ -98,7 +98,7 @@
                                         <input type="hidden" th:value="*{date}"/>
 
                                         <button type="submit"><i
-                                                class="fas fa-rocket mr-2"></i>DONT USE THIS Add to cart</button>
+                                                class="btn btn-sm btn-primary mr-2"></i>DONT USE THIS Add to cart</button>
                                     </form>
 
 

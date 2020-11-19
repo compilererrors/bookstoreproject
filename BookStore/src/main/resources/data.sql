@@ -98,3 +98,5 @@ INSERT INTO BOOK (TITLE, AUTHOR, PRICE, DATE, THUMBNAIL) VALUES ('Mot fyren',' W
 INSERT INTO BOOK (TITLE, AUTHOR, PRICE, DATE, THUMBNAIL) VALUES ('Pennskaftet',' Wägner, Elin','980.2','December 24, 2005','https://media.bonnierforlagen.se/bokbilder/tif/9789100133825.jpg')
 INSERT INTO BOOK (TITLE, AUTHOR, PRICE, DATE, THUMBNAIL) VALUES ('Tornet',' William Butler Yeats','1066.40','December 20, 2007','https://media.bonnierforlagen.se/bokbilder/tif/9789100123802.jpg')
 INSERT INTO BOOK (TITLE, AUTHOR, PRICE, DATE, THUMBNAIL) VALUES ('Thérèse Raquin','Émile Zola','1483.89','June 23, 2016','https://s2.adlibris.com/images/1649987/therese-raquin.jpg')
+
+INSERT INTO USER (USERNAME, PASSWORD) VALUES ('user', '$2a$11$CnaXBtz2j4wA1LAV7d.hEO6X4PHoaV4hIVSJQ5VWA0qn.86DgtFtK')
