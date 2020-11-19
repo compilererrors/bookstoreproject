@@ -203,16 +203,16 @@
         <form>
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="width:300px">
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
 
             <div class="form-group">
                 <label for="zipcode">Zip Code</label>
-                <input id="zipcode" class="form-control form-control-lg" type="Zip Code" placeholder="zip Code" >
+                <input id="zipcode" class="form-control form-control-lg" type="Zip Code" placeholder="zip Code" style="width:300px" >
             </div>
 
-            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample" style="width:200px;margin-bottom:30px">
             Select Delivery Method</a><br>
 
             <div class="collapse" id="collapseExample2">
@@ -236,7 +236,7 @@
                         </label>
                     </div>
 
-                    <a class="btn btn-primary" th:href="@{'/order'}" role="button">BUY</a>
+                    <center><a class="btn btn-primary" th:href="@{'/order'}" role="button" style="width:200px;color:white;margin-top:20px">BUY</a></center>
                 </div>
             </div>
         </form>
