@@ -92,34 +92,50 @@
 <br><br>
 <h2>Your Cart</h2>
 
-            <div class="shopcart">
+
+<table th:each="item : ${session.cartHandler}" class="tg" width="100%">
+    <tbody>
+    <tr style="height: 26px;">
+        <td style="width: 450px; height: 26px;" colspan="4"></td>
+    </tr>
+    <tr style="height: 26px;">
+        <td style="width: 50px; height: 105px;" rowspan="4"><img th:src="${item.book.thumbnail}" width="50px" height="100px" style="vertical-align:bottom"></td>
+        <td style="width: 138px; height: 26px;"><span th:text="'Title: ' + ${item.book.title}"></span></td>
+        <td style="width: 109px; height: 26px;text-align:center;">QTY</td>
+        <td style="width: 144px; height: 26px;text-align:center;">QTY PRICE</td>
+    </tr>
+    <tr style="height: 26px;">
+        <td style="width: 138px; height: 26px;"><span th:text="'Author: ' + ${item.book.author}"></span></td>
+        <td style="width: 109px; height: 26px;" rowspan="3"><center><table class="tg">
+            <thead>
+            <tr>
+                <th class="tg-c3ow"> <form ACTION="#" th:action="@{/subExistingBook}"  method="POST">
+                    <button type="number" name="cartItemIndex" th:value="${itemStat.index}">-</button>
+                </form></th>
+                <th><span th:text="${item.qty}"></span></th>
+                <th> <form ACTION="#" th:action="@{/addExistingBook}"  method="POST">
+                    <button type="number" name="cartItemIndex" th:value="${itemStat.index}">+</button>
+                </form></th>
+            </tr>
+            </thead>
+        </table></center></td>
+        <td style="width: 144px; height: 26px;text-align:center;" rowspan="3"><span th:text="${item.book.price}"></span></td>
+    </tr>
+    <tr style="height: 26px;">
+        <td style="width: 138px; height: 26px;"><span th:text="'Date: ' + ${item.book.date}"></span></td>
+    </tr>
+    <tr style="height: 27px;">
+        <td style="width: 138px; height: 27px;">safe</td>
+    </tr>
+    <tr style="height: 27px;">
+        <td style="width: 450px; height: 27px;" colspan="4"><hr></td>
+    </tr>
+    </tbody>
+</table>
+<!-- DivTable.com
 
 
-                    <style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:0px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:0px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-9wq8{border-color:inherit;text-align:center;vertical-align:middle}
-.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-.tg .tg-0lax{text-align:left;vertical-align:top}
-</style>
-                    <style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:0px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:0px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-9wq8{border-color:inherit;text-align:center;vertical-align:middle;widht:250px;}
-.tg .tg-9wq88{border-color:inherit;text-align:center}
-.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
-.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-.tg .tg-0lax{text-align:left;vertical-align:top}
-</style>
-
-
-                    <table th:each="item : ${session.cartHandler}" class="tg" width="100%">
+<table th:each="item : ${session.cartHandler}" class="tg" width="100%">
                         <thead>
                         <tr>
                             <th class="tg-0pky" colspan="3"></th>
@@ -127,7 +143,7 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td class="tg-0pky"></td>
+                            <td rowspan="4"><br><img src="https://s2.adlibris.com/images/997643/mor-courage-och-hennes-barn-den-kaukasiska-kritcirkeln.jpg" width="50px" height="100px" style="vertical-align:bottom"></td>
                             <td class="tg-c3ow">QTY</td>
                             <td class="tg-c3ow">QTY PRICE</td>
                         </tr>
@@ -184,7 +200,7 @@
 
 
 
-
+-->-->
 
 
 
