@@ -57,7 +57,6 @@ public class BookController {
     @GetMapping("/edit/{id}")
     public String edit(Model model, @PathVariable int id) {
         Book book = service.getBookById(id);
-
         model.addAttribute("book" ,book);
         return "adminadd";
     }
@@ -66,11 +65,8 @@ public class BookController {
 
     @GetMapping("/book/{page}/{id}")
     public String book(Model model, @PathVariable Integer page, @PathVariable int id) {
-
         model.addAttribute("page", page);
         model.addAttribute("book", service.getBookById(id));
-
-
         return "book";
     }
 
@@ -149,15 +145,7 @@ public class BookController {
 
     @PostMapping("/editbook")
     public String editbook(@ModelAttribute Book book) {
-        if (book.isNew()) {
-
-            service.addBook(book); // todo  should not have if and else in controller do like yesterday
-        }
-        else {
-            service.addBook(book);; // todo  should not have if and else in controller do like yesterday
-            //restTemplate.put("http://localhost:8080/book/" + book.getId(), book, Book.class);
-        }
-
+        service.addBook(book);
         return "redirect:/";
     }
 
@@ -201,10 +189,8 @@ public class BookController {
 
     private void getBooks(Model model, int page) {
         books = service.getSubBooks(page-1) ;
-
         int pageCount = service.getPageCount();
         int[] pages = toArray(pageCount);
-
         model.addAttribute("books", books);
         model.addAttribute("pages", pages);
         model.addAttribute("currentPage", page);
@@ -212,8 +198,6 @@ public class BookController {
         model.addAttribute("showNext", page < pageCount);
 
     }
-
-
 
     private void getBookPageAndId(Model model, int page, int id) {
         Book book = service.getBookById(id);

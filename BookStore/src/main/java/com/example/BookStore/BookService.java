@@ -42,26 +42,7 @@ public class BookService {
     }
 
 
-
     public List<Book> getSubBooks(int page){
-        int from = Math.max(1,page*PAGE_SIZE+1);
-        int to = Math.min((int)bookRepository.count(), (page+1)*PAGE_SIZE);
-
-
-
-
-              /*
-                repository.getPage(page - 1, PAGE_SIZE);
-
-            public List<Book> getPage(int page, int pageSize) {
-        int from = Math.max(0,page*pageSize);
-        int to = Math.min(books.size(),(page+1)*pageSize);
-
-        return books.subList(from, to);
-         */
-
-        //bookRepository.findAll(new PageRequest(page, 20));
-
          Pageable paging = PageRequest.of(page, PAGE_SIZE, Sort.by("id"));
          Page<Book> pagedResult = bookRepository.findAll(paging);
         if(pagedResult.hasContent()) {
@@ -70,13 +51,8 @@ public class BookService {
             return new ArrayList<Book>();
         }
 
-
-
-        //return (List<Book>)bookRepository.findByIdBetween(from,to);
-
-
     }
 
 
-    //page-1,PAGE_SIZE
+
 }
