@@ -107,7 +107,7 @@ public class BookController {
         String referer = request.getHeader("Referer");
         return "redirect:" + referer;
     }
- /*
+
     @RequestMapping(value = "/addToCart", method = RequestMethod.POST)
     public String rateHandler22(HttpSession session, HttpServletRequest request, @ModelAttribute("book") Book book, Model model) {
         cartHandler.addItemToCart(book);
@@ -117,7 +117,7 @@ public class BookController {
         System.out.println(book.getTitle());
         String referer = request.getHeader("referer");
         return "redirect:/" + referer;
-    } */
+    }
 
     @PostMapping("/addExistingBook")
         public String addOneExistingBook(HttpSession session, HttpServletRequest request, int cartItemIndex){
@@ -181,6 +181,11 @@ public class BookController {
     @GetMapping("/login")
     public String level1() {
         return "login";
+    }
+
+    @GetMapping("/register")
+    public String register() {
+        return "userform";
     }
 
 

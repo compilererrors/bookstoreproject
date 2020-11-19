@@ -50,7 +50,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/","/order","/h2","/h2/**","/test", "/orders", "/book/**", "/shopcart", "/addExistingBook", "/subExistingBook", "/addToCart").permitAll()
+                .antMatchers("/","/h2","/h2/**","/test", "/orders", "/book/**", "/shopcart", "/addExistingBook", "/subExistingBook", "/addToCart", "/init", "/registeruser", "/register", "/userform").permitAll()
+                .antMatchers("/admin").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -79,16 +80,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         web.ignoring().antMatchers("/javax.faces.resource/**", "/css/**","/js/**", "/images/**");
     }
 
-    @Bean
-    @Override
-    public UserDetailsService userDetailsService() {
-        UserDetails user =
-                User.withDefaultPasswordEncoder()
-                        .username("user")
-                        .password("password")
-                        .roles("USER")
-                        .build();
 
-        return new InMemoryUserDetailsManager(user);
-    }
 }
