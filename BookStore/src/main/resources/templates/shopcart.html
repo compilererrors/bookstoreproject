@@ -176,21 +176,16 @@
                         </tbody>
                     </table>
 -->
-                    <table  style="margin:50px" th:if="${session.totalprice!=null}">
-                        <thead>
-                        <tr>
-                            <th>Sum</th>
-                            <th><span th:text="'Total Price:'+ ${session.totalprice}"></span></th>
-                        </tr>
-                        </thead>
+                    <table  style="margin:150px;" th:if="${session.totalprice!=null}">
+
                         <tbody>
                         <tr>
-                            <td>Freight</td>
-                            <td>0</td>
+                            <td><h3>Freight:</h3></td>
+                            <td><h3>0</h3></td>
                         </tr>
                         <tr>
-                            <td><b>Total Price</b></td>
-                            <td><span th:text="'Total Price:'+ ${session.totalprice}"></span></td>
+                            <td><h3>Total Price:</h3></td>
+                            <td><h3><span th:text="'Total Price:'+ ${session.totalprice}"></span></h3></td>
                         </tr>
                         </tbody>
                     </table>
