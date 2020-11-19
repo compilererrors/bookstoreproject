@@ -1,5 +1,14 @@
 body {
   font-family: tahoma, helvetica, arial, sans-serif;
+  background: url(https://imgmediagumlet.lbb.in/media/2020/03/5e6fa0adcdf431136ea4aeb9_1584373933388.jpg) no-repeat center center fixed;
+}
+
+.testing {
+ background: url(https://imgmediagumlet.lbb.in/media/2020/03/5e6fa0adcdf431136ea4aeb9_1584373933388.jpg) no-repeat center center fixed;
+}
+
+#testing {
+ background: url(https://imgmediagumlet.lbb.in/media/2020/03/5e6fa0adcdf431136ea4aeb9_1584373933388.jpg) no-repeat center center fixed;
 }
 
 strong {
