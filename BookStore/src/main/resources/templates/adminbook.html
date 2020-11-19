@@ -21,7 +21,12 @@
         <ul class="navbar-nav mr-auto">
 
             <li class="nav-item">
-                <a class="nav-link" href="/adminview" th:if="${#httpServletRequest.remoteUser != null}" th:inline="text">Delete Books</a>
+                <a class="nav-link" href="/" th:inline="text">View Books</a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="/adminview" th:if="${#httpServletRequest.remoteUser != null}" th:inline="text">Admin Books</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" th:if="${#httpServletRequest.remoteUser != null}"href="/add"  th:inline="text">Add New Book</a>
