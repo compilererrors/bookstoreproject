@@ -35,6 +35,15 @@ public class BookController {
         return "books";
     }
 
+
+    @GetMapping("/register")
+    public String users(Model model) {
+
+        model.addAttribute("user", new User());
+        return "userform";
+    }
+
+
     @GetMapping("/adminview")
     public String adminbooks(Model model, @RequestParam(value = "page", required = false, defaultValue = "1") int page) {
         getBooks(model, page);

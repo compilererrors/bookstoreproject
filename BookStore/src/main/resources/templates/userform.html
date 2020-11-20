@@ -19,12 +19,7 @@
             <div><input type="submit" value="Sign In"/></div>
         </form>
 
-        <form ACTION="#" th:action="@{/register}" th:object="${book}" method="POST">
-            <input th:if="*{id!=null}" type="hidden" th:field="*{id}"/>
-            <input  th:field="*{username}"/>
-            <input  th:field="*{password}"/>
-            <button type="submit">save</button>
-        </form>
+
 
 </div>
 </body>
