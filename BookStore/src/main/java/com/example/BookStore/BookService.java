@@ -14,7 +14,7 @@ import java.util.Optional;
 @Service
 public class BookService {
 
-    private static final int PAGE_SIZE = 10;
+    private static final int PAGE_SIZE = 8;
 
     @Autowired
     BookRepository bookRepository;
