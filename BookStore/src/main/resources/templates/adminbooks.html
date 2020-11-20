@@ -116,8 +116,9 @@
                     </ol>
         <nav aria-label="...">
                 <span id="paginationId" class="pagination pagination-lg">
-                    <div class="page-link">
+                    <div class="page-link" id="paginationCenter">
                         <li class="page-item active" aria-current="page">
+
 
                             <span class="page-item" th:if="${showPrev}">
                                 <a th:href="'/adminview?page=' + ${currentPage-1}" th:text="Previous"></a>

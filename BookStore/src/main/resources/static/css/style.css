@@ -55,7 +55,12 @@ height: 15px;
    
     padding: 12px 20px;
     position: center;
-    left: -450px;
+
+}
+
+#paginationCenter {
+margin: auto;
+border: none;
 
 }
 h2 {margin:2rem 0;}
@@ -67,4 +72,11 @@ h2 {margin:2rem 0;}
 }
 .embed-responsive .card-img-top {
     object-fit: cover;
+}
+
+.card-title {
+    margin-bottom: .75rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
