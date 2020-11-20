@@ -69,19 +69,48 @@
     </div>
 </nav>
 
-<div class="container">
-    <h1>Admin page</h1>
+<div class="container" style="margin:auto 40px;"><br>
+
+    <center><h1>Admin page - Add New Book <img src="https://pics.clipartpng.com/midle/Black_Book_PNG_Clipart-1048.png" width="80" height="100"></h1></center>
 
                 <form action="#" th:action="@{/save}" th:object="${book}" method="POST">
-                    Title: <input type="text" th:field="*{title}"/>
-                    Author: <input type="text" th:field="*{author}"/>
-                    Price: <input type="text" th:field="*{price}"/>
-                    Date(ex:November 25, 1974): <input type="text" placeholder="November 25, 1974" th:field="*{date}"/>
+
+                    <div class="form-group">
+                        <label for="formGroupExampleInputTitle">Title</label>
+                        <input type="text" class="form-control" id="formGroupExampleInputTitle" placeholder="The Notebook" th:field="*{title}" required/>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInputAuthor">Author</label>
+                        <input type="text" class="form-control" id="formGroupExampleInputAuthor" placeholder="Nicholas Sparks" th:field="*{author}" required/>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="formGroupExampleInputPrice">Price</label>
+                        <input type="number" class="form-control" id="formGroupExampleInputPrice" placeholder="199" th:field="*{price}" required/>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="formGroupExampleInputDate">Date</label>
+                        <input type="date" class="form-control" id="formGroupExampleInputDate" placeholder="10/01/1996" th:field="*{date}" required/>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="formGroupExampleInputDate">IMG URL</label>
+                        <input type="text" class="form-control" id="formGroupExampleInputURL" placeholder="https://upload.wikimedia.org/wikipedia/en/d/d9/The_Notebook_Cover.jpg" th:field="*{thumbnail}" required/>
+
+                    </div>
+
                     <input th:if="${book.id != null}" type="hidden" th:field="*{id}"/>
-                    <input type="submit" value="Save book">
+                    <input type="submit" class="btn btn-primary" value="Save book">
                 </form>
 
             </div>
+
 
 
 
