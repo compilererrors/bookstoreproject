@@ -82,35 +82,44 @@
 
 
             </div>
-            <table>
-                <tr>
-                    <th>Title</th>
-                    <th th:text="${book.title}"></th>
-                </tr>
-                <tr>
-                    <th>Author</th>
-                    <th th:text="${book.author}"></th>
-                </tr>
-                <tr>
-                    <th>Price</th>
-                    <th th:text="${book.price}"></th>
-                </tr>
-                <tr>
-                    <th>Date</th>
-                    <th th:text="${book.date}"></th>
-                </tr>
-
-            </table>
 
 
-            <form ACTION="#" th:action="@{'/book/' + ${currentPage} + '/' + ${book.id} + '/addBook'}" th:object="${book}" method="POST">
-              <!--  <input type="hidden" th:field="*{id}"/>
-                <input type="hidden" th:field="*{title}"/>
-                <input type="hidden" th:field="*{author}"/>
-                <input type="hidden" th:field="*{price}"/>
-                <input type="hidden" th:field="*{date}"/>-->
-                <button type="submit">Add to cart</button>
-            </form>
+            <div class="card" style="width: 20rem;border=0px;">
+                <img th:src="${book.thumbnail}" class="card-img-top" alt="...">
+                <div class="card-body" >
+                    <h5 class="card-title" th:text="${book.title}"></h5>
+                    <p class="card-text"><table>
+
+                    <tr>
+                        <th>Author: </th>
+                        <th th:text="${'Author ' + book.author}"></th>
+                    </tr>
+                    <tr>
+                        <th>Price: </th>
+                        <th th:text="${book.price}"></th>
+                    </tr>
+                    <tr>
+                        <th>Date: </th>
+                        <th th:text="${book.date}"></th>
+                    </tr>
+
+                </table></p>
+
+                    <form ACTION="#" th:action="@{'/book/' + ${currentPage} + '/' + ${book.id} + '/addBook'}" th:object="${book}" method="POST">
+                        <!--  <input type="hidden" th:field="*{id}"/>
+                          <input type="hidden" th:field="*{title}"/>
+                          <input type="hidden" th:field="*{author}"/>
+                          <input type="hidden" th:field="*{price}"/>
+                          <input type="hidden" th:field="*{date}"/>-->
+                        <button type="submit" class="btn btn-primary">Add to cart</button>
+                    </form>
+
+
+                </div>
+            </div>
+
+
+
 
 
         </div>
