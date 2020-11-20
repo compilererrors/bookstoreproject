@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.context.request.WebRequest;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -183,10 +184,8 @@ public class BookController {
         return "login";
     }
 
-    @GetMapping("/register")
-    public String register() {
-        return "userform";
-    }
+
+
 
 
     @GetMapping("/shopcart")

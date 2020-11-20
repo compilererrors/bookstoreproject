@@ -11,10 +11,19 @@
 
 
 
-        <form th:action="@{/registerUser}" th:object="${user}" method="POST">
+        <form th:action="@{/register}" th:object="${user}" method="POST">
             <div><label> User Name : <input type="text" name="username"/> </label></div>
             <div><label> Password: <input type="password" name="password"/> </label></div>
+            <div><label>  <input th:if="*{id!=null}" type="hidden" th:field="*{id}"/> </label></div>
+
             <div><input type="submit" value="Sign In"/></div>
+        </form>
+
+        <form ACTION="#" th:action="@{/register}" th:object="${book}" method="POST">
+            <input th:if="*{id!=null}" type="hidden" th:field="*{id}"/>
+            <input  th:field="*{username}"/>
+            <input  th:field="*{password}"/>
+            <button type="submit">save</button>
         </form>
 
 </div>
