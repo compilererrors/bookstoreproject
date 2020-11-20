@@ -3,17 +3,21 @@ package com.example.BookStore;
 import javax.persistence.*;
 
 @Entity
+@Table(name="users")
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
     private Long id;
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "username")
     private String username;
 
+    @Column(name="password")
     private String password;
 
+    @Column(name="roles")
     private String roles;
 
     public Long getId() {

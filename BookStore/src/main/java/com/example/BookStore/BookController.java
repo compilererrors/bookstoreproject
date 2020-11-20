@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.context.request.WebRequest;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -33,6 +34,15 @@ public class BookController {
 
         return "books";
     }
+
+
+    @GetMapping("/register")
+    public String users(Model model) {
+
+        model.addAttribute("user", new User());
+        return "userform";
+    }
+
 
     @GetMapping("/adminview")
     public String adminbooks(Model model, @RequestParam(value = "page", required = false, defaultValue = "1") int page) {
@@ -183,10 +193,8 @@ public class BookController {
         return "login";
     }
 
-    @GetMapping("/register")
-    public String register() {
-        return "userform";
-    }
+
+
 
 
     @GetMapping("/shopcart")

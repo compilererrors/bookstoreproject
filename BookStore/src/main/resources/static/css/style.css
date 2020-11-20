@@ -1,6 +1,6 @@
 body {
   font-family: tahoma, helvetica, arial, sans-serif;
-  background: url(https://picserio.com/data/out/450/library-books-wallpaper_6518710.jpg) no-repeat center center fixed;
+
 }
 
 .testing {
@@ -16,6 +16,10 @@ strong {
   background-color: yellow;
 }
 
+h1 {
+background-color:white;
+width:100%;
+}
 
 
 
@@ -55,7 +59,12 @@ height: 15px;
    
     padding: 12px 20px;
     position: center;
-    left: -450px;
+
+}
+
+#paginationCenter {
+margin: auto;
+border: none;
 
 }
 h2 {margin:2rem 0;}
@@ -67,4 +76,11 @@ h2 {margin:2rem 0;}
 }
 .embed-responsive .card-img-top {
     object-fit: cover;
+}
+
+.card-title {
+    margin-bottom: .75rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
